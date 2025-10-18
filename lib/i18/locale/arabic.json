@@ -1,0 +1,37 @@
+{
+  "accessibility-settings": "خيارات إمكانية الوصول",
+  "content": {
+    "title": "المحتوى",
+    "adjustFontSize": "ضبط حجم الخط",
+    "dyslexiaFont": "خط عسر القراءة",
+    "fontWeight": "وزن الخط",
+    "textAlignLeft": "محاذاة النص لليسار",
+    "textAlignCenter": "محاذاة النص للوسط",
+    "textAlignRight": "محاذاة النص لليمين",
+    "highlightLinks": "تسليط الضوء على الروابط",
+    "highlightTitles": "تسليط الضوء على العناوين",
+    "letterSpacing": "تباعد الحروف",
+    "wordsSpacing": "تباعد الكلمات",
+    "lineHeight": "ارتفاع الخط",
+    "zoom": "تكبير"
+  },
+  "colors": {
+    "title": "اللون",
+    "blueLightFilter": "مرشح الضوء الأزرق",
+    "brightnessControl": "التحكم في السطوع",
+    "darkContrast": "تباين داكن",
+    "highContrast": "تباين عالي",
+    "highSaturation": "تشبع عالي",
+    "lightContrast": "تباين فاتح",
+    "lowSaturation": "تشبع منخفض",
+    "monochrom": "أحادي اللون",
+    "textColorPicker": "منتقي لون النص",
+    "visualImpairment": "ضعف البصر"
+  },
+  "tools": {
+    "title": "الأدوات",
+    "bigCursor": "مؤشر كبير",
+    "readingGuide": "دليل القراءة"
+  },
+  "resetSettings": "إعادة تعيين الإعدادات"
+}
