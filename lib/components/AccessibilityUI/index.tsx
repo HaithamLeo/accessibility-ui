@@ -10,7 +10,7 @@ import { WIDGET_APP_ID, WIDGET_PORTAL_ID } from "lib/constants"
 import LanguageDetector from "i18next-browser-languagedetector"
 import Portal from "components/Portal/Portal"
 import i18n from "i18next"
-import { WidgetState, ChangeWidgetStateHandler, WidgetConfig } from "lib/types"
+import { WidgetState, ChangeWidgetStateHandler, WidgetConfig, AccessibilityTheme } from "lib/types"
 import { getInitialWidgetState } from "lib/utils"
 import { initReactI18next } from "react-i18next"
 import { Resources, getLanguagePromises, languageArray, languages, rtlLanguages } from "i18/locale"
@@ -36,9 +36,10 @@ const WIDGET_STORAGE_KEY = "a11y-widget-state"
 
 interface AccessibilityUIProps {
   config?: WidgetConfig
+  theme?: AccessibilityTheme
 }
 
-const AccessibilityUI: FC<AccessibilityUIProps> = ({ config }) => {
+const AccessibilityUI: FC<AccessibilityUIProps> = ({ config, theme }) => {
   const [isLoading, setIsLoading] = useState(true)
   const [hasLanguages, setHasLanguages] = useState(false)
   useFontSizeTraverse()
@@ -46,6 +47,16 @@ const AccessibilityUI: FC<AccessibilityUIProps> = ({ config }) => {
   const [widgetState, setWidgetState] = useSessionStorage<WidgetState>(WIDGET_STORAGE_KEY, getInitialWidgetState())
   const [showWidget, setShowWidget] = useState(false)
   const direction = rtlLanguages.includes(widgetState.language) ? "rtl" : "ltr"
+
+  // Apply custom theme as CSS variables
+  const themeStyles = theme
+    ? {
+        "--primary-color": theme.primaryColor,
+        "--highlight-color": theme.highlightColor,
+        "--background-color": theme.backgroundColor,
+        "--text-color": theme.textColor,
+      }
+    : {}
 
   const changeLanguageHandler = (langCode: string) => {
     i18n.changeLanguage(langCode, () => {
@@ -101,7 +112,7 @@ const AccessibilityUI: FC<AccessibilityUIProps> = ({ config }) => {
 
   return (
     <Portal wrapperElementId={WIDGET_PORTAL_ID}>
-      <div id={WIDGET_APP_ID} style={{ direction, fontSize: 50 }} data-a11y-language={widgetState.language}>
+      <div id={WIDGET_APP_ID} style={{ direction, fontSize: 50, ...themeStyles } as React.CSSProperties} data-a11y-language={widgetState.language}>
         <AccessibilityButton onShow={renderWidgetHandler} />
 
         {!isLoading && (

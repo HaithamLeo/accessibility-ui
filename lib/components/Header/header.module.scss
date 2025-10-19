@@ -1,0 +1,35 @@
+%button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  svg {
+    fill: var(--text-color, #000);
+    font-weight: bold;
+    font-size: 2em;
+    width: 30px;
+  }
+}
+.widgetHeader {
+  height: 60px;
+  background-color: var(--white, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+  &__closeBtn {
+    @extend %button;
+  }
+  &__resetBtn {
+    @extend %button;
+  }
+  &__title {
+    color: var(--text-color, #000);
+    margin: 0;
+    font-size: 18px;
+  }
+  & > .a11y-lang-select-container {
+    flex: 1;
+  }
+}

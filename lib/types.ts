@@ -39,6 +39,13 @@ export type IconSvgComponent = React.FunctionComponent<
   }
 >
 
+export interface AccessibilityTheme {
+  primaryColor?: string
+  highlightColor?: string
+  backgroundColor?: string
+  textColor?: string
+}
+
 export interface WidgetConfig {
   // Content Panel Widgets
   adjustFontSize?: boolean

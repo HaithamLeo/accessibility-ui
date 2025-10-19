@@ -1,3 +1,3 @@
 import AccessibilityUI from "components/AccessibilityUI"
-export type { WidgetConfig } from "lib/types"
+export type { WidgetConfig, AccessibilityTheme } from "lib/types"
 export default AccessibilityUI
