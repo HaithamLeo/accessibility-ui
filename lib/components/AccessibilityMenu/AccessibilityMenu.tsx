@@ -1,7 +1,7 @@
 import { FC, useEffect, useRef } from "react"
 import { WIDGET_MENU_CONTAINER_ID } from "lib/constants"
 import Header from "components/Header/Header"
-import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
+import { WidgetState, ChangeWidgetStateHandler, WidgetConfig } from "lib/types"
 import Select from "react-select"
 import styled from "components/AccessibilityMenu/accessibilityMenu.module.scss"
 import MenuContent from "components/MenuContent/MenuContent"
@@ -18,6 +18,7 @@ interface AccessibilityMenuProps {
   onShow: () => void
   showWidget: boolean
   hasLanguages: boolean
+  config?: WidgetConfig
 }
 
 const AccessibilityMenu: FC<AccessibilityMenuProps> = ({
@@ -30,6 +31,7 @@ const AccessibilityMenu: FC<AccessibilityMenuProps> = ({
   onShow,
   showWidget,
   hasLanguages,
+  config,
 }) => {
   const { t } = useTranslation()
   const { language } = widgetState
@@ -52,7 +54,7 @@ const AccessibilityMenu: FC<AccessibilityMenuProps> = ({
           onChange={(lang) => lang && onLangChange(lang.value)}
           ref={selectRef}
         />
-        <MenuContent nodeListUpdated={nodeListUpdated} widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
+        <MenuContent nodeListUpdated={nodeListUpdated} widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} config={config} />
         <div className={styled.resetButton}>
           <button onClick={onInit}>{t("resetSettings")}</button>
         </div>

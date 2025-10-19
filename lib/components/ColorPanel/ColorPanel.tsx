@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
+import { WidgetState, ChangeWidgetStateHandler, WidgetConfig } from "lib/types"
 import BlueLightFilterButton from "components/buttons/colors/BlueLightFilterButton/BlueLightFilterButton"
 import BrightnessControl from "components/buttons/colors/BrightnessControl/BrightnessControl"
 import DarkContrastButton from "components/buttons/colors/DarkContrastButton/DarkContrastButton"
@@ -14,21 +14,22 @@ import VisualImpairmentButton from "components/buttons/colors/VisualImpairmentBu
 interface ColorPanelProps {
   widgetState: WidgetState
   onChangeWidgetState: (fn: ChangeWidgetStateHandler) => void
+  config?: WidgetConfig
 }
 
-const ColorPanel: FC<ColorPanelProps> = ({ widgetState, onChangeWidgetState }) => {
+const ColorPanel: FC<ColorPanelProps> = ({ widgetState, onChangeWidgetState, config }) => {
   return (
     <>
-      <BlueLightFilterButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <LightContrastButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <DarkContrastButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <HighContrastButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <BrightnessControl widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <HighSaturationButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <LowSaturationButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <MonochromeButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <VisualImpairmentButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <TextColorPickerButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
+      {(config?.blueLightFilter !== false) && <BlueLightFilterButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.lightContrast !== false) && <LightContrastButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.darkContrast !== false) && <DarkContrastButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.highContrast !== false) && <HighContrastButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.brightness !== false) && <BrightnessControl widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.highSaturation !== false) && <HighSaturationButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.lowSaturation !== false) && <LowSaturationButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.monochrome !== false) && <MonochromeButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.visualImpairment !== false) && <VisualImpairmentButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.textColorPicker !== false) && <TextColorPickerButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
     </>
   )
 }

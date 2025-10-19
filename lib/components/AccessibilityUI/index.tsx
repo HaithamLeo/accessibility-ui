@@ -10,7 +10,7 @@ import { WIDGET_APP_ID, WIDGET_PORTAL_ID } from "lib/constants"
 import LanguageDetector from "i18next-browser-languagedetector"
 import Portal from "components/Portal/Portal"
 import i18n from "i18next"
-import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
+import { WidgetState, ChangeWidgetStateHandler, WidgetConfig } from "lib/types"
 import { getInitialWidgetState } from "lib/utils"
 import { initReactI18next } from "react-i18next"
 import { Resources, getLanguagePromises, languageArray, languages, rtlLanguages } from "i18/locale"
@@ -34,7 +34,11 @@ i18n
 
 const WIDGET_STORAGE_KEY = "a11y-widget-state"
 
-const AccessibilityUI: FC = () => {
+interface AccessibilityUIProps {
+  config?: WidgetConfig
+}
+
+const AccessibilityUI: FC<AccessibilityUIProps> = ({ config }) => {
   const [isLoading, setIsLoading] = useState(true)
   const [hasLanguages, setHasLanguages] = useState(false)
   useFontSizeTraverse()
@@ -111,6 +115,7 @@ const AccessibilityUI: FC = () => {
             nodeListUpdated={nodeListUpdated}
             onShow={renderWidgetHandler}
             hasLanguages={hasLanguages}
+            config={config}
           />
         )}
       </div>

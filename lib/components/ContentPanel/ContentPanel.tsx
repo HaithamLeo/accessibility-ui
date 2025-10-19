@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
+import { WidgetState, ChangeWidgetStateHandler, WidgetConfig } from "lib/types"
 import AdjustFontSize from "components/buttons/content/AdjustFontSize/AdjustFontSize"
 import DyslexiaFontButton from "components/buttons/content/DyslexiaFontButton/DyslexiaFontButton"
 import FontWeightButton from "components/buttons/content/FontWeightButton/FontWeightButton"
@@ -15,37 +15,38 @@ interface ContentPanelProps {
   nodeListUpdated: number
   widgetState: WidgetState
   onChangeWidgetState: (fn: ChangeWidgetStateHandler) => void
+  config?: WidgetConfig
 }
-const ContentPanel: FC<ContentPanelProps> = ({ nodeListUpdated, widgetState, onChangeWidgetState }) => {
+const ContentPanel: FC<ContentPanelProps> = ({ nodeListUpdated, widgetState, onChangeWidgetState, config }) => {
   return (
     <>
-      <AdjustFontSize nodeListUpdated={nodeListUpdated} widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <DyslexiaFontButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <FontWeightButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <AlignTextButton
+      {(config?.adjustFontSize !== false) && <AdjustFontSize nodeListUpdated={nodeListUpdated} widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.dyslexiaFont !== false) && <DyslexiaFontButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.fontWeight !== false) && <FontWeightButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.textAlignLeft !== false) && <AlignTextButton
         widgetState={widgetState}
         onChangeWidgetState={onChangeWidgetState}
         direction="left"
         translationKey="content.textAlignLeft"
-      />
-      <AlignTextButton
+      />}
+      {(config?.textAlignCenter !== false) && <AlignTextButton
         widgetState={widgetState}
         onChangeWidgetState={onChangeWidgetState}
         direction="center"
         translationKey="content.textAlignCenter"
-      />
-      <AlignTextButton
+      />}
+      {(config?.textAlignRight !== false) && <AlignTextButton
         widgetState={widgetState}
         onChangeWidgetState={onChangeWidgetState}
         direction="right"
         translationKey="content.textAlignRight"
-      />
-      <HighlightLinksButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <HighlightTitlesButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <LetterSpacingButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <WordSpacingButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <LineHeightButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
-      <ZoomButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />
+      />}
+      {(config?.highlightLinks !== false) && <HighlightLinksButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.highlightTitles !== false) && <HighlightTitlesButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.letterSpacing !== false) && <LetterSpacingButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.wordSpacing !== false) && <WordSpacingButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.lineHeight !== false) && <LineHeightButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
+      {(config?.zoom !== false) && <ZoomButton widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} />}
     </>
   )
 }
