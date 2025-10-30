@@ -1,6 +1,6 @@
-# ♿ accessibilityUI: React Accessibility Widget
+# ♿ @rihal/accessibility-ui: React Accessibility Widget
 
-**accessibilityUI** is a React component that brings an advanced accessibility interface to your web app, empowering users with a suite of usability tools.
+**@rihal/accessibility-ui** is a React component that brings an advanced accessibility interface to your web app, empowering users with a suite of usability tools.
 
 ---
 
@@ -9,9 +9,66 @@
 Install via your preferred package manager:
 
 ```bash
-yarn add accessibilityUI
+yarn add @rihal/accessibility-ui
 # or
-npm install accessibilityUI
+npm install @rihal/accessibility-ui
+```
+
+---
+
+## Theme Customization
+
+You can customize the theme of the accessibility widget to match your application's branding by passing a `theme` prop:
+
+```jsx
+import AccessibilityUI from "@rihal/accessibility-ui"
+
+export default function App() {
+  return (
+    <div className="App">
+      <MyApp />
+      <AccessibilityUI
+        theme={{
+          primaryColor: "#2563eb", // Blue
+          highlightColor: "#3b82f6", // Lighter blue
+          backgroundColor: "#f0f9ff", // Light blue background
+          textColor: "#1e293b", // Dark slate
+        }}
+      />
+    </div>
+  )
+}
+```
+
+### Theme Properties
+
+All theme properties are optional. If not provided, the default theme will be used:
+
+- `primaryColor` - Main color used for UI elements (default: `#4b5563`)
+- `highlightColor` - Color used for highlighted/active states (default: `#4b5563`)
+- `backgroundColor` - Background color of the widget menu (default: `#f7f7fe`)
+- `textColor` - Text color throughout the widget (default: `#000`)
+
+### TypeScript Support for Themes
+
+```tsx
+import AccessibilityUI, { AccessibilityTheme } from "@rihal/accessibility-ui"
+
+const customTheme: AccessibilityTheme = {
+  primaryColor: "#2563eb",
+  highlightColor: "#3b82f6",
+  backgroundColor: "#f0f9ff",
+  textColor: "#1e293b",
+}
+
+export default function App() {
+  return (
+    <div className="App">
+      <MyApp />
+      <AccessibilityUI theme={customTheme} />
+    </div>
+  )
+}
 ```
 
 ---
@@ -21,7 +78,7 @@ npm install accessibilityUI
 ### Basic Usage (All Widgets Enabled)
 
 ```jsx
-import AccessibilityUI from "accessibilityUI"
+import AccessibilityUI from "@rihal/accessibility-ui"
 
 export default function App() {
   return (
@@ -38,18 +95,18 @@ export default function App() {
 You can selectively enable or disable specific accessibility widgets by passing a `config` prop. By default, all widgets are enabled. Set any widget to `false` to hide it.
 
 ```jsx
-import AccessibilityUI from "accessibilityUI"
+import AccessibilityUI from "@rihal/accessibility-ui"
 
 export default function App() {
   return (
     <div className="App">
       <MyApp />
-      <AccessibilityUI 
+      <AccessibilityUI
         config={{
           // Content widgets
           adjustFontSize: true,
           dyslexiaFont: true,
-          fontWeight: false,  // Hide font weight widget
+          fontWeight: false, // Hide font weight widget
           textAlignLeft: true,
           textAlignCenter: true,
           textAlignRight: true,
@@ -57,21 +114,21 @@ export default function App() {
           highlightTitles: true,
           letterSpacing: true,
           lineHeight: true,
-          wordSpacing: false,  // Hide word spacing widget
+          wordSpacing: false, // Hide word spacing widget
           zoom: true,
-          
+
           // Color widgets
           blueLightFilter: true,
           brightness: true,
           darkContrast: true,
           lightContrast: true,
           highContrast: true,
-          highSaturation: false,  // Hide high saturation widget
-          lowSaturation: false,   // Hide low saturation widget
+          highSaturation: false, // Hide high saturation widget
+          lowSaturation: false, // Hide low saturation widget
           monochrome: true,
           textColorPicker: true,
           visualImpairment: true,
-          
+
           // Tool widgets
           bigCursor: true,
           readingGuide: true,
@@ -87,7 +144,7 @@ export default function App() {
 The library includes TypeScript definitions. You can import the `WidgetConfig` type for better type safety:
 
 ```tsx
-import AccessibilityUI, { WidgetConfig } from "accessibilityUI"
+import AccessibilityUI, { WidgetConfig } from "@rihal/accessibility-ui"
 
 const config: WidgetConfig = {
   adjustFontSize: true,
@@ -144,11 +201,12 @@ export default function App() {
 All widgets are enabled by default. You can selectively disable widgets by passing a `config` prop to the `AccessibilityUI` component. Here are all available configuration options:
 
 ### Content Panel Widgets
+
 - `adjustFontSize` - Font size adjustment controls
 - `dyslexiaFont` - Dyslexia-friendly font toggle
 - `fontWeight` - Font weight selection
 - `textAlignLeft` - Left text alignment
-- `textAlignCenter` - Center text alignment  
+- `textAlignCenter` - Center text alignment
 - `textAlignRight` - Right text alignment
 - `highlightLinks` - Highlight links feature
 - `highlightTitles` - Highlight titles feature
@@ -158,6 +216,7 @@ All widgets are enabled by default. You can selectively disable widgets by passi
 - `zoom` - Page zoom control
 
 ### Color Panel Widgets
+
 - `blueLightFilter` - Blue light filter toggle
 - `brightness` - Brightness control
 - `darkContrast` - Dark contrast mode
@@ -170,8 +229,46 @@ All widgets are enabled by default. You can selectively disable widgets by passi
 - `visualImpairment` - Visual impairment mode
 
 ### Tools Panel Widgets
+
 - `bigCursor` - Big cursor toggle
 - `readingGuide` - Reading guide toggle
+
+---
+
+## Combining Theme and Widget Configuration
+
+You can customize both the theme and which widgets to display:
+
+```jsx
+import AccessibilityUI from "@rihal/accessibility-ui"
+
+export default function App() {
+  return (
+    <div className="App">
+      <MyApp />
+      <AccessibilityUI
+        theme={{
+          primaryColor: "#2563eb",
+          highlightColor: "#3b82f6",
+          backgroundColor: "#f0f9ff",
+          textColor: "#1e293b",
+        }}
+        config={{
+          adjustFontSize: true,
+          dyslexiaFont: true,
+          zoom: true,
+          highContrast: true,
+          bigCursor: true,
+          readingGuide: true,
+          // Disable widgets you don't need
+          wordSpacing: false,
+          highSaturation: false,
+        }}
+      />
+    </div>
+  )
+}
+```
 
 ---
 
@@ -180,15 +277,15 @@ All widgets are enabled by default. You can selectively disable widgets by passi
 Install and add to your React project:
 
 ```bash
-yarn add accessibilityUI
+yarn add @rihal/accessibility-ui
 # or
-npm install accessibilityUI
+npm install @rihal/accessibility-ui
 ```
 
 ### All Widgets Enabled (Default)
 
 ```jsx
-import AccessibilityUI from "accessibilityUI"
+import AccessibilityUI from "@rihal/accessibility-ui"
 
 export default function App() {
   return (
@@ -203,13 +300,13 @@ export default function App() {
 ### Custom Widget Configuration
 
 ```jsx
-import AccessibilityUI from "accessibilityUI"
+import AccessibilityUI from "@rihal/accessibility-ui"
 
 export default function App() {
   return (
     <div className="App">
       <MyApp />
-      <AccessibilityUI 
+      <AccessibilityUI
         config={{
           adjustFontSize: true,
           dyslexiaFont: true,
@@ -229,4 +326,4 @@ export default function App() {
 
 ---
 
-Empower everyone to navigate your site comfortably with accessibilityUI—no setup required.
+Empower everyone to navigate your site comfortably with @rihal/accessibility-ui—no setup required.
