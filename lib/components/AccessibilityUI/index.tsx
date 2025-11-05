@@ -14,7 +14,7 @@ import { WidgetState, ChangeWidgetStateHandler, WidgetConfig, AccessibilityTheme
 import { getInitialWidgetState } from "lib/utils"
 import { initReactI18next } from "react-i18next"
 import { Resources, getLanguagePromises, languageArray, languages, rtlLanguages } from "i18/locale"
-import en from "i18/locale/en.json"
+import en from "i18/locale/english.json"
 
 // Initialize i18next immediately with default resources
 i18n

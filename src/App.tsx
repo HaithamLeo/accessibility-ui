@@ -6,7 +6,9 @@ const App: FC = () => {
   return (
     <>
       <DemoAccessibilityUI />
-      <AccessibilityUI />
+      <AccessibilityUI
+        theme={{ primaryColor: "#9333ea", highlightColor: "#a855f7", backgroundColor: "#faf5ff", textColor: "#581c87" }}
+      />
     </>
   )
 }

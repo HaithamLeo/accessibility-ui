@@ -1,0 +1,30 @@
+name: PR Review AI Agent
+on:
+  pull_request:
+    types: [opened, reopened, review_requested, ready_for_review]
+  issue_comment:
+jobs:
+  pr_agent_job:
+    if: ${{ github.event.sender.type != 'Bot' }}
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+      contents: write
+    name: Runs PR review AI agent, comment /help for further info
+    steps:
+      - name: PR Agent action step
+        id: pragent
+        uses: qodo-ai/pr-agent@main
+        env:
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          pr_description.publish_description_as_comment: "true"
+          pr_description.add_original_user_description: "false"
+          pr_reviewer.enable_review_labels_effort: "false"
+          # enable this if you want to commit code suggestions directly
+          # pr_code_suggestions.commitable_code_suggestions: "true"
+          pr_code_suggestions.dual_publishing_score_threshold: "7"
+          github_action_config.auto_review: "true"
+          github_action_config.auto_describe: "true"
+          github_action_config.auto_improve: "true"

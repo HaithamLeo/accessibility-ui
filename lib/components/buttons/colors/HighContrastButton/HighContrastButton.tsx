@@ -1,7 +1,7 @@
 import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import HighContrastIcon from "assets/icons/highcontrast.svg?react"
+import HighContrastIcon from "assets/icons/highContrast.svg?react"
 import RcSlider from "components/RcSlider/RcSlider"
 import ValueControl from "components/buttons/ValueControl/ValueControl"
 
