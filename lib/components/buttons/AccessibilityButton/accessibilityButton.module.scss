@@ -1,0 +1,12 @@
+.AccessibilityBtn {
+  position: fixed;
+  z-index: 1000000;
+  inset-inline-start: 2rem;
+  bottom: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.AccessibilityIcon {
+  color: #4c4c4c;
+}
