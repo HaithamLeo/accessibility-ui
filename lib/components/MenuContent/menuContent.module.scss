@@ -1,0 +1,34 @@
+.menuContent {
+  display: grid;
+  height: calc(100vh - 250px);
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 2rem;
+}
+
+.widgetGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  // Optional: make buttons look nice in grid
+  > * {
+    min-width: 0;
+    // You can add padding, border, background, etc. for styling
+  }
+}
+
+.block {
+  margin-top: 3rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4b5563;
+  text-transform: capitalize;
+  margin: 0;
+  padding: 0.2em;
+  margin-bottom: 1rem;
+}
