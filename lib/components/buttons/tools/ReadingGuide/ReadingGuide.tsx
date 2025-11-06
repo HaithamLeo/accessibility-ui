@@ -1,6 +1,6 @@
 import { FC, useEffect, useMemo, useState } from "react"
 import Portal from "components/Portal/Portal"
-import ReadingGuideIcon from "assets/icons/readingGuide.svg?react"
+import { BookOpenText as ReadingGuideIcon } from "lucide-react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 import styles from "components/buttons/tools/ReadingGuide/readingGuide.module.scss"

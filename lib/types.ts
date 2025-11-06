@@ -33,11 +33,20 @@ export interface WidgetState {
   showReadingGuide: boolean
 }
 
-export type IconSvgComponent = React.FunctionComponent<
-  React.SVGProps<SVGSVGElement> & {
-    title?: string | undefined
-  }
->
+export type IconSvgComponent =
+  | React.FunctionComponent<
+      React.SVGProps<SVGSVGElement> & {
+        title?: string | undefined
+      }
+    >
+  | React.ComponentType<{
+      size?: string | number
+      color?: string
+      strokeWidth?: string | number
+      className?: string
+      style?: React.CSSProperties
+      title?: string
+    }>
 
 export interface AccessibilityTheme {
   primaryColor?: string

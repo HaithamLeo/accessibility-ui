@@ -3,7 +3,7 @@ import styled from "components/buttons/content/LineHeightButton/LineHeightButton
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import { WIDGET_PORTAL_ID } from "lib/constants"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import TextRotateUpIcon from "assets/icons/lineHeight.svg?react"
+import { ListChevronsUpDown as TextRotateUpIcon } from "lucide-react"
 import ValueControlButton from "components/buttons/ValueControlButton/ValueControlButton"
 
 const styleID = "a11y-line-height-style"

@@ -1,5 +1,5 @@
 import { FC } from "react"
-import CloseIcon from "assets/icons/close.svg?react"
+import { X as CloseIcon } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import styles from "components/Header/header.module.scss"
 

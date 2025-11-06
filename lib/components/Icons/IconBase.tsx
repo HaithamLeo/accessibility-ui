@@ -8,7 +8,7 @@ export interface IconBaseProps extends React.SVGProps<SVGSVGElement> {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const IconBase: React.FC<IconBaseProps> = ({ size = "100%", color = "currentColor", className, style, ...rest }) => (
+const IconBase = ({ size = "100%", color = "currentColor", className, style, ...rest }: IconBaseProps): JSX.Element => (
   <span
     style={{
       display: "inline-flex",

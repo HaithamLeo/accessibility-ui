@@ -1,7 +1,7 @@
 import React from "react"
 import IconBase, { IconBaseProps } from "components/Icons/IconBase"
 
-const Accessibility: React.FC<IconBaseProps> = ({ size, color, className, style, ...rest }) => (
+const Accessibility = ({ size, color, className, style, ...rest }: IconBaseProps): JSX.Element => (
   <IconBase size={size} color={color} className={className} style={style}>
     <svg
       stroke="currentColor"

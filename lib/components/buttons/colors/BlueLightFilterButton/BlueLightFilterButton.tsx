@@ -1,5 +1,5 @@
 import { FC, useLayoutEffect } from "react"
-import VisibilitySharpIcon from "assets/icons/blueLight.svg?react"
+import { LightbulbOff as VisibilitySharpIcon } from "lucide-react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 

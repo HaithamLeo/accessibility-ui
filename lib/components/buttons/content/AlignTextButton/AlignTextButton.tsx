@@ -1,12 +1,19 @@
-import { FC, useLayoutEffect } from "react"
+import { FC, useLayoutEffect, useMemo } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import FormatAlignCenterIcon from "assets/icons/textAlign.svg?react"
+import { TextAlignStart, TextAlignCenter, TextAlignEnd } from "lucide-react"
 import { WIDGET_PORTAL_ID } from "lib/constants"
 
 const styleID = "a11y-align-text-style"
 const rootClass = "a11y-align-text"
 type Direction = "right" | "center" | "left"
+
+// Map direction to icon component
+const ICON_MAP = {
+  left: TextAlignStart,
+  center: TextAlignCenter,
+  right: TextAlignEnd,
+} as const
 
 interface AlignTextButtonProps {
   direction: Direction
@@ -19,6 +26,9 @@ const AlignTextButton: FC<AlignTextButtonProps> = ({ direction, widgetState, onC
   const { textAlign } = widgetState
   const dir = textAlign[direction]
   const isToggled = !!dir
+
+  // Select the appropriate icon based on direction
+  const IconComponent = useMemo(() => ICON_MAP[direction], [direction])
 
   const alignHandler = () => {
     onChangeWidgetState((d) => {
@@ -48,7 +58,7 @@ const AlignTextButton: FC<AlignTextButtonProps> = ({ direction, widgetState, onC
 
   return (
     <WidgetButton
-      Icon={FormatAlignCenterIcon}
+      Icon={IconComponent}
       isToggled={isToggled}
       onToggle={alignHandler}
       titleTranslationKey={translationKey}

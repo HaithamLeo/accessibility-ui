@@ -2,7 +2,7 @@ import { FC, useLayoutEffect, useMemo } from "react"
 import { textTags } from "lib/constants"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import Brightness4SharpIcon from "assets/icons/darkContrast.svg?react"
+import { Moon as Brightness4SharpIcon } from "lucide-react"
 
 const styleID = "a11y-dark-contrast-style"
 const rootClass = "a11y-dark-contrast"

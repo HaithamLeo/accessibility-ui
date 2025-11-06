@@ -2,7 +2,7 @@ import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import { WIDGET_PORTAL_ID } from "lib/constants"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import EightMpIcon from "assets/icons/letterSpacing.svg?react"
+import { BetweenVerticalEnd as EightMpIcon } from "lucide-react"
 import ValueControl from "components/buttons/ValueControl/ValueControl"
 
 const styleID = "a11y-letter-spacing-style"

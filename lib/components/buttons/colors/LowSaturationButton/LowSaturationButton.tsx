@@ -1,6 +1,6 @@
 import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
-import HighSaturationIcon from "assets/icons/highSaturation.svg?react"
+import { Blend as HighSaturationIcon } from "lucide-react"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 import RcSlider from "components/RcSlider/RcSlider"
 import ValueControl from "components/buttons/ValueControl/ValueControl"

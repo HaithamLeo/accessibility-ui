@@ -1,7 +1,7 @@
 import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import MonochromePhotosIcon from "assets/icons/monochrome.svg?react"
+import { Camera as MonochromePhotosIcon } from "lucide-react"
 
 const styleID = "a11y-monochrome-style"
 const rootClass = "a11y-monochrome"

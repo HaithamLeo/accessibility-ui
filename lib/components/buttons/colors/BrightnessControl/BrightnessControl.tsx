@@ -2,7 +2,7 @@ import { FC, useLayoutEffect } from "react"
 import styled from "components/buttons/colors/BrightnessControl/BrightnessControl.module.scss"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import LightModeSharpIcon from "assets/icons/brightness.svg?react"
+import { Sun as LightModeSharpIcon } from "lucide-react"
 import ValueControlButton from "components/buttons/ValueControlButton/ValueControlButton"
 import RcSlider from "components/RcSlider/RcSlider"
 

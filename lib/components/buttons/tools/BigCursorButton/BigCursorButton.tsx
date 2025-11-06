@@ -3,7 +3,7 @@ import cursor from "components/buttons/tools/BigCursorButton/cursor"
 import { getDataImageSvgBase64 } from "lib/utils"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import BigCursorIcon from "assets/icons/bigCursor.svg?react"
+import { MousePointer as BigCursorIcon } from "lucide-react"
 
 const styleID = "a11y-big-cursor-style"
 const rootClass = "a11y-big-cursor"

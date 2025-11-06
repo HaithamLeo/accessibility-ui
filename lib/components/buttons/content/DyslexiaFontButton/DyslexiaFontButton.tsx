@@ -2,7 +2,7 @@ import { FC, useLayoutEffect } from "react"
 import DYSLEXIA_FONT_STYLE from "components/buttons/content/DyslexiaFontButton/style"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import SortByAlphaIcon from "assets/icons/dyslexia.svg?react"
+import { BookType as SortByAlphaIcon } from "lucide-react"
 
 const styleID = "a11y-dyslexia-font-style"
 const rootClass = "a11y-dyslexia-font"

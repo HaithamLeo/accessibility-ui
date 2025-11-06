@@ -1,7 +1,7 @@
 import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import TextIncreaseIcon from "assets/icons/adjustFontSize.svg?react"
+import { ALargeSmall as TextIncreaseIcon } from "lucide-react"
 import ValueControl from "components/buttons/ValueControl/ValueControl"
 
 const getNodesByDataAttrAndAdjustFontSize = (dataAttr: string, percentage: number) => {

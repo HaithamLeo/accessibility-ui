@@ -2,7 +2,7 @@ import { FC, useLayoutEffect } from "react"
 import styled from "components/buttons/content/ZoomButton/ZoomButton.module.scss"
 import { WIDGET_PORTAL_ID } from "lib/constants"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
-import ZoomInIcon from "assets/icons/zoom.svg?react"
+import { ZoomIn as ZoomInIcon } from "lucide-react"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 import ValueControlButton from "components/buttons/ValueControlButton/ValueControlButton"
 
