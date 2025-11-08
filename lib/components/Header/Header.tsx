@@ -1,5 +1,5 @@
 import { FC } from "react"
-import CloseIcon from "assets/icons/close.svg?react"
+import { X } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import styles from "components/Header/header.module.scss"
 
@@ -14,7 +14,7 @@ const Header: FC<HeaderProps> = ({ onShow }) => {
     <header className={styles.widgetHeader}>
       <h3 className={styles.widgetHeader__title}>{t("accessibility-settings")}</h3>
       <button onClick={onShow} className={styles.widgetHeader__closeBtn}>
-        <CloseIcon />
+        <X />
       </button>
     </header>
   )

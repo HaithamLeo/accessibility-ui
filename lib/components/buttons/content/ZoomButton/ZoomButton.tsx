@@ -2,7 +2,7 @@ import { FC, useLayoutEffect } from "react"
 import styled from "components/buttons/content/ZoomButton/ZoomButton.module.scss"
 import { WIDGET_PORTAL_ID } from "lib/constants"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
-import ZoomInIcon from "assets/icons/zoom.svg?react"
+import { ZoomIn } from "lucide-react"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 import ValueControlButton from "components/buttons/ValueControlButton/ValueControlButton"
 
@@ -31,6 +31,15 @@ const ZoomButton: FC<ZoomButtonProps> = ({ widgetState, onChangeWidgetState }) =
       }
     })
   }
+
+  const zoomToggleHandler = () => {
+    onChangeWidgetState((draft) => {
+      const isActive = !draft.zoom.isZoom
+      draft.zoom.isZoom = isActive
+      draft.zoom.zoom = isActive ? 1.2 : 1
+    })
+  }
+
   const zoomInitHandler = () => {
     onChangeWidgetState((draft) => {
       draft.zoom.isZoom = false
@@ -57,19 +66,28 @@ const ZoomButton: FC<ZoomButtonProps> = ({ widgetState, onChangeWidgetState }) =
     }
   }, [zoom, isZoom])
 
-  return (
-    <WidgetButton
-      elementType="div"
-      Icon={ZoomInIcon}
-      titleTranslationKey={"content.zoom"}
-      title="Zoom"
-      stats={zoom ? `${(zoom * 100).toFixed(0)}%` : undefined}
-    >
+  const renderControlButtons = () => {
+    if (!isZoom) return null
+    return (
       <div className={styled.accZoomButton}>
         <ValueControlButton onClick={increaseZoomHandler} controlType="increase" />
         <ValueControlButton onClick={zoomInitHandler} controlType="init" />
         <ValueControlButton onClick={decreaseZoomHandler} controlType="decrease" />
       </div>
+    )
+  }
+
+  return (
+    <WidgetButton
+      Icon={ZoomIn}
+      titleTranslationKey={"content.zoom"}
+      title="Zoom"
+      elementType={!isZoom ? "button" : "div"}
+      isActive={isZoom}
+      onToggle={!isZoom ? zoomToggleHandler : undefined}
+      stats={isZoom ? `${(zoom * 100).toFixed(0)}%` : undefined}
+    >
+      {renderControlButtons()}
     </WidgetButton>
   )
 }

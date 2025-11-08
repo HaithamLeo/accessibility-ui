@@ -112,8 +112,12 @@ const AccessibilityUI: FC<AccessibilityUIProps> = ({ config, theme }) => {
 
   return (
     <Portal wrapperElementId={WIDGET_PORTAL_ID}>
-      <div id={WIDGET_APP_ID} style={{ direction, fontSize: 50, ...themeStyles } as React.CSSProperties} data-a11y-language={widgetState.language}>
-        <AccessibilityButton onShow={renderWidgetHandler} />
+      <div
+        id={WIDGET_APP_ID}
+        style={{ direction, fontSize: 50, ...themeStyles } as React.CSSProperties}
+        data-a11y-language={widgetState.language}
+      >
+        <AccessibilityButton onShow={renderWidgetHandler} direction={direction as "ltr" | "rtl"} />
 
         {!isLoading && (
           <AccessibilityMenu

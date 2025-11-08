@@ -3,7 +3,7 @@ import classNames from "classnames"
 import { IconSvgComponent } from "lib/types"
 import { useTranslation } from "react-i18next"
 import styles from "components/buttons/WidgetButton/widgetButton.module.scss"
-import QuestionMarkIcon from "assets/icons/questionMark.svg?react"
+import { HelpCircle } from "lucide-react"
 
 interface DynamicButtonProps {
   children: ReactNode
@@ -61,7 +61,11 @@ const WidgetButton: FC<WidgetButtonProps> = ({
     if (!tooltipTranslationKey) return null
     return (
       <>
-        <QuestionMarkIcon title="Help" className={`${styles.widgetButton__icon} ${styles["widgetButton__icon--help"]}`} />
+        <HelpCircle
+          className={`${styles.widgetButton__icon} ${styles["widgetButton__icon--help"]}`}
+          aria-label="Help"
+        />
+
         <span data-tooltip={t(tooltipTranslationKey ?? "") ?? undefined}></span>
       </>
     )

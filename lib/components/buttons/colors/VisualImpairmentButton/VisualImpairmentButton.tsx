@@ -1,6 +1,6 @@
 import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
-import BlindIcon from "assets/icons/visualImpairment.svg?react"
+import { Eye } from "lucide-react"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 
 const styleID = "a11y-visual-impairment-style"
@@ -43,7 +43,7 @@ const VisualImpairmentButton: FC<VisualImpairmentButtonProps> = ({ widgetState, 
 
   return (
     <WidgetButton
-      Icon={BlindIcon}
+      Icon={Eye}
       isToggled={isVisualImpairment}
       onToggle={toggleVisuality}
       titleTranslationKey="colors.visualImpairment"

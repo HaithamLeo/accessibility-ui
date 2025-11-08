@@ -27,6 +27,7 @@ export const getInitialWidgetState = (): WidgetState => {
     isMonochrome: false,
     color: "",
     isVisualImpairment: false,
+    isFontSize: false,
     adjustFontSizePercentage: 100,
     textAlign: { left: null, center: null, right: null },
     isDyslexiaFont: false,

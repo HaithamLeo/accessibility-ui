@@ -1,0 +1,63 @@
+.floatingButton {
+  position: fixed;
+  z-index: 1000000;
+  bottom: 2rem;
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    background: linear-gradient(135deg, #4e63d2 0%, #5e387e 100%);
+  }
+}
+
+// LTR positioning (English)
+.floatingButton[dir="ltr"],
+.floatingButton:not([dir]),
+.floatingButton.ltr {
+  left: 2rem;
+
+  &:hover {
+    transform: translateY(-2px) scale(1.05);
+  }
+}
+
+// RTL positioning (Arabic) - flipped to right side
+.floatingButton[dir="rtl"],
+.floatingButton.rtl {
+  right: 2rem;
+
+  // Flip the icon horizontally for RTL
+  svg {
+    transform: scaleX(-1);
+  }
+
+  &:hover {
+    transform: translateY(-2px) scale(1.05);
+
+    svg {
+      transform: scaleX(-1);
+    }
+  }
+}
+
+.floatingIcon {
+  color: white;
+  width: 24px;
+  height: 24px;
+}

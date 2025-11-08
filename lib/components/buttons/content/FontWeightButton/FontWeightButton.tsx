@@ -1,6 +1,6 @@
 import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
-import FormatBoldIcon from "assets/icons/fontWeight.svg?react"
+import { Bold } from "lucide-react"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 
 const styleID = "a11y-font-weight-style"
@@ -41,7 +41,7 @@ const FontWeightButton: FC<FontWeightButtonProps> = ({ widgetState, onChangeWidg
 
   return (
     <WidgetButton
-      Icon={FormatBoldIcon}
+      Icon={Bold}
       isToggled={isFontWeightBold}
       onToggle={toggleFontWeightHandler}
       titleTranslationKey="content.fontWeight"

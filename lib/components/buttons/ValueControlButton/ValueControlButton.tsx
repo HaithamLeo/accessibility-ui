@@ -1,8 +1,6 @@
 import { CSSProperties, FC } from "react"
 import styles from "components/buttons/ValueControlButton/valueControlButton.module.scss"
-import RestartAltIcon from "assets/icons/init.svg?react"
-import AddIcon from "assets/icons/add.svg?react"
-import RemoveIcon from "assets/icons/remove.svg?react"
+import { RotateCcw, Plus, Minus } from "lucide-react"
 import { IconSvgComponent } from "lib/types"
 
 export type ValueControlType = "init" | "increase" | "decrease"
@@ -16,16 +14,16 @@ const ValueControlButton: FC<ValueControlButtonProps> = ({ controlType, onClick,
   let Icon: IconSvgComponent
   switch (controlType) {
     case "increase":
-      Icon = AddIcon
+      Icon = Plus
       break
     case "decrease":
-      Icon = RemoveIcon
+      Icon = Minus
       break
     case "init":
-      Icon = RestartAltIcon
+      Icon = RotateCcw
       break
     default:
-      Icon = RestartAltIcon
+      Icon = RotateCcw
   }
 
   return (

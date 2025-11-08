@@ -1,7 +1,7 @@
 import { FC, useLayoutEffect, useMemo } from "react"
 import { textTags } from "lib/constants"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
-import Brightness4SharpIcon from "assets/icons/darkContrast.svg?react"
+import { SunMoon } from "lucide-react"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 
 const styleID = "a11y-light-contrast-style"
@@ -51,7 +51,7 @@ const LightContrastButton: FC<LightContrastButtonProps> = ({ widgetState, onChan
 
   return (
     <WidgetButton
-      Icon={Brightness4SharpIcon}
+      Icon={SunMoon}
       isToggled={widgetState.isDarkContrast}
       onToggle={toggleLightContrastHandler}
       titleTranslationKey="colors.lightContrast"

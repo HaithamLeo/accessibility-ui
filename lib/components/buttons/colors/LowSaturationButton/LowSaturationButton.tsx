@@ -1,6 +1,6 @@
 import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
-import HighSaturationIcon from "assets/icons/highSaturation.svg?react"
+import { Droplet } from "lucide-react"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 import RcSlider from "components/RcSlider/RcSlider"
 import ValueControl from "components/buttons/ValueControl/ValueControl"
@@ -80,7 +80,7 @@ const LowSaturationButton: FC<LowSaturationButtonProps> = ({ widgetState, onChan
 
   return (
     <WidgetButton
-      Icon={HighSaturationIcon}
+      Icon={Droplet}
       titleTranslationKey="colors.lowSaturation"
       title="Low Saturation"
       stats={isLowSaturation ? `${saturation}%` : undefined}

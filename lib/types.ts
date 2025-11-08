@@ -19,6 +19,7 @@ export interface WidgetState {
   isMonochrome: boolean
   color: string
   isVisualImpairment: boolean
+  isFontSize: boolean
   adjustFontSizePercentage: number
   textAlign: TextAlign
   isDyslexiaFont: boolean
@@ -33,11 +34,13 @@ export interface WidgetState {
   showReadingGuide: boolean
 }
 
-export type IconSvgComponent = React.FunctionComponent<
-  React.SVGProps<SVGSVGElement> & {
-    title?: string | undefined
-  }
->
+export type IconSvgComponent =
+  | React.FunctionComponent<
+      React.SVGProps<SVGSVGElement> & {
+        title?: string | undefined
+      }
+    >
+  | React.ForwardRefExoticComponent<React.RefAttributes<SVGSVGElement>>
 
 export interface AccessibilityTheme {
   primaryColor?: string
@@ -60,7 +63,7 @@ export interface WidgetConfig {
   lineHeight?: boolean
   wordSpacing?: boolean
   zoom?: boolean
-  
+
   // Color Panel Widgets
   blueLightFilter?: boolean
   brightness?: boolean
@@ -72,7 +75,7 @@ export interface WidgetConfig {
   monochrome?: boolean
   textColorPicker?: boolean
   visualImpairment?: boolean
-  
+
   // Tools Panel Widgets
   bigCursor?: boolean
   readingGuide?: boolean

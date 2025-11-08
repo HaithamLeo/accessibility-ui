@@ -1,7 +1,7 @@
 import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import FormatAlignCenterIcon from "assets/icons/textAlign.svg?react"
+import { AlignCenter } from "lucide-react"
 import { WIDGET_PORTAL_ID } from "lib/constants"
 
 const styleID = "a11y-align-text-style"
@@ -48,7 +48,7 @@ const AlignTextButton: FC<AlignTextButtonProps> = ({ direction, widgetState, onC
 
   return (
     <WidgetButton
-      Icon={FormatAlignCenterIcon}
+      Icon={AlignCenter}
       isToggled={isToggled}
       onToggle={alignHandler}
       titleTranslationKey={translationKey}

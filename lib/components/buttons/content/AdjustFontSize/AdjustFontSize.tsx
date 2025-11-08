@@ -1,7 +1,7 @@
 import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import TextIncreaseIcon from "assets/icons/adjustFontSize.svg?react"
+import { Type } from "lucide-react"
 import ValueControl from "components/buttons/ValueControl/ValueControl"
 
 const getNodesByDataAttrAndAdjustFontSize = (dataAttr: string, percentage: number) => {
@@ -22,7 +22,7 @@ interface AdjustFontSizeProps {
 }
 
 const AdjustFontSize: FC<AdjustFontSizeProps> = ({ nodeListUpdated, widgetState, onChangeWidgetState }) => {
-  const { adjustFontSizePercentage } = widgetState
+  const { adjustFontSizePercentage, isFontSize } = widgetState
 
   const increaseFontSizeHandler = () => {
     onChangeWidgetState((draft) => {
@@ -40,9 +40,19 @@ const AdjustFontSize: FC<AdjustFontSizeProps> = ({ nodeListUpdated, widgetState,
       }
     })
   }
+
+  const fontSizeToggleHandler = () => {
+    onChangeWidgetState((draft) => {
+      const isActive = !draft.isFontSize
+      draft.isFontSize = isActive
+      draft.adjustFontSizePercentage = isActive ? 120 : 100
+    })
+  }
+
   const initFontSizeHandler = () => {
     onChangeWidgetState((draft) => {
       draft.adjustFontSizePercentage = 100
+      draft.isFontSize = false
     })
   }
 
@@ -56,19 +66,28 @@ const AdjustFontSize: FC<AdjustFontSizeProps> = ({ nodeListUpdated, widgetState,
     getNodesByDataAttrAndAdjustFontSize("data-a11y-orgfontsize", adjustFontSizePercentage)
   }, [adjustFontSizePercentage])
 
-  return (
-    <WidgetButton
-      elementType="div"
-      Icon={TextIncreaseIcon}
-      titleTranslationKey={"content.adjustFontSize"}
-      title="Adjust Font Size"
-      stats={`${adjustFontSizePercentage}%`}
-    >
+  const renderControlButtons = () => {
+    if (!isFontSize) return null
+    return (
       <ValueControl
         onIncrease={increaseFontSizeHandler}
         onToggle={initFontSizeHandler}
         onDescrease={decreaseFontSizeHandler}
       />
+    )
+  }
+
+  return (
+    <WidgetButton
+      Icon={Type}
+      titleTranslationKey={"content.adjustFontSize"}
+      title="Adjust Font Size"
+      elementType={!isFontSize ? "button" : "div"}
+      isActive={isFontSize}
+      onToggle={!isFontSize ? fontSizeToggleHandler : undefined}
+      stats={isFontSize ? `${adjustFontSizePercentage}%` : undefined}
+    >
+      {renderControlButtons()}
     </WidgetButton>
   )
 }

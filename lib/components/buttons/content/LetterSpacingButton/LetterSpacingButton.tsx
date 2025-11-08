@@ -2,7 +2,7 @@ import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import { WIDGET_PORTAL_ID } from "lib/constants"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import EightMpIcon from "assets/icons/letterSpacing.svg?react"
+import { LetterText } from "lucide-react"
 import ValueControl from "components/buttons/ValueControl/ValueControl"
 
 const styleID = "a11y-letter-spacing-style"
@@ -68,7 +68,7 @@ const LetterSpacingButton: FC<LetterSpacingButtonProps> = ({ widgetState, onChan
 
   return (
     <WidgetButton
-      Icon={EightMpIcon}
+      Icon={LetterText}
       titleTranslationKey={"content.letterSpacing"}
       title="Letter Spacing"
       stats={letterSpacing ? `${letterSpacing}px` : undefined}

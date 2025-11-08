@@ -2,7 +2,7 @@ import { FC, useLayoutEffect, useMemo } from "react"
 import { HexColorPicker } from "react-colorful"
 import { WIDGET_PORTAL_ID, textTags } from "lib/constants"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
-import ColorPickIcon from "assets/icons/platte.svg?react"
+import { Palette } from "lucide-react"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 import ValueControlButton from "components/buttons/ValueControlButton/ValueControlButton"
 import styled from "components/buttons/colors/TextColorPickerButton/TextColorPickerButton.module.scss"
@@ -61,7 +61,7 @@ const TextColorPickerButton: FC<TextColorPickerButtonProps> = ({ widgetState, on
 
   return (
     <WidgetButton
-      Icon={ColorPickIcon}
+      Icon={Palette}
       titleTranslationKey="colors.textColorPicker"
       elementType="div"
       title="Text Color Picker"

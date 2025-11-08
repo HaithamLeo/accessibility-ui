@@ -26,6 +26,9 @@ importers:
       immer:
         specifier: ^10.0.3
         version: 10.0.3
+      lucide-react:
+        specifier: ^0.553.0
+        version: 0.553.0(react@18.2.0)
       rc-slider:
         specifier: ^10.5.0
         version: 10.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -1369,6 +1372,11 @@ packages:
   lru-cache@6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
+
+  lucide-react@0.553.0:
+    resolution: {integrity: sha512-BRgX5zrWmNy/lkVAe0dXBgd7XQdZ3HTf+Hwe3c9WK6dqgnj9h+hxV+MDncM88xDWlCq27+TKvHGE70ViODNILw==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   magic-string@0.30.5:
     resolution: {integrity: sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==}
@@ -3253,6 +3261,10 @@ snapshots:
   lru-cache@6.0.0:
     dependencies:
       yallist: 4.0.0
+
+  lucide-react@0.553.0(react@18.2.0):
+    dependencies:
+      react: 18.2.0
 
   magic-string@0.30.5:
     dependencies:

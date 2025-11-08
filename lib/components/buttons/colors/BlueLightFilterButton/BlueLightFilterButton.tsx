@@ -1,5 +1,5 @@
 import { FC, useLayoutEffect } from "react"
-import VisibilitySharpIcon from "assets/icons/blueLight.svg?react"
+import { EyeOff } from "lucide-react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 
@@ -44,7 +44,7 @@ const BlueLightFilterButton: FC<BlueLightFilterButtonProps> = ({ widgetState, on
 
   return (
     <WidgetButton
-      Icon={VisibilitySharpIcon}
+      Icon={EyeOff}
       isToggled={isBlueLightFilter}
       onToggle={toggleBluetLightFilter}
       titleTranslationKey="colors.blueLightFilter"

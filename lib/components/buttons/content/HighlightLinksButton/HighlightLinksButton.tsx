@@ -1,6 +1,6 @@
 import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
-import LinkIcon from "assets/icons/highlightLinks.svg?react"
+import { Link } from "lucide-react"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 
 const styleID = "a11y-highlight-links-style"
@@ -42,7 +42,7 @@ const HighlightLinksButton: FC<HighlightLinksButtonProps> = ({ widgetState, onCh
 
   return (
     <WidgetButton
-      Icon={LinkIcon}
+      Icon={Link}
       isToggled={highlightLinks}
       onToggle={toggleHighlightHander}
       titleTranslationKey="content.highlightLinks"

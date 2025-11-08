@@ -1,7 +1,7 @@
 import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import HighContrastIcon from "assets/icons/highContrast.svg?react"
+import { Contrast } from "lucide-react"
 import RcSlider from "components/RcSlider/RcSlider"
 import ValueControl from "components/buttons/ValueControl/ValueControl"
 
@@ -77,7 +77,7 @@ const HighContrastButton: FC<HighContrastButtonProps> = ({ widgetState, onChange
 
   return (
     <WidgetButton
-      Icon={HighContrastIcon}
+      Icon={Contrast}
       titleTranslationKey="colors.highContrast"
       title="High Contrast"
       stats={isHighContrast ? `${contrast}%` : undefined}

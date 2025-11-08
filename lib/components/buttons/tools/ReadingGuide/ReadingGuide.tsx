@@ -1,6 +1,6 @@
 import { FC, useEffect, useMemo, useState } from "react"
 import Portal from "components/Portal/Portal"
-import ReadingGuideIcon from "assets/icons/readingGuide.svg?react"
+import { ScanLine } from "lucide-react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 import styles from "components/buttons/tools/ReadingGuide/readingGuide.module.scss"
@@ -55,7 +55,7 @@ const ReadingGuide: FC<ReadingGuideProps> = ({ rgGap = 100, widgetState, onChang
   return (
     <>
       <WidgetButton
-        Icon={ReadingGuideIcon}
+        Icon={ScanLine}
         isToggled={showReadingGuide}
         onToggle={toggleReadingGuideHandler}
         titleTranslationKey="tools.readingGuide"

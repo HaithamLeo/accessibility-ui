@@ -1,6 +1,6 @@
 import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
-import TitleIcon from "assets/icons/highlightTitles.svg?react"
+import { Heading } from "lucide-react"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 
 const styleID = "a11y-highlight-titles-style"
@@ -42,7 +42,7 @@ const HighlightTitlesButton: FC<HighlightTitlesButtonProps> = ({ widgetState, on
 
   return (
     <WidgetButton
-      Icon={TitleIcon}
+      Icon={Heading}
       isToggled={highlightTitles}
       onToggle={toggleHighlightHander}
       titleTranslationKey="content.highlightTitles"

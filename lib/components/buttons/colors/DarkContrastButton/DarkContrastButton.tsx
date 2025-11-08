@@ -2,7 +2,7 @@ import { FC, useLayoutEffect, useMemo } from "react"
 import { textTags } from "lib/constants"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import Brightness4SharpIcon from "assets/icons/darkContrast.svg?react"
+import { Moon } from "lucide-react"
 
 const styleID = "a11y-dark-contrast-style"
 const rootClass = "a11y-dark-contrast"
@@ -51,7 +51,7 @@ const DarkContrastButton: FC<DarkContrastButtonProps> = ({ widgetState, onChange
 
   return (
     <WidgetButton
-      Icon={Brightness4SharpIcon}
+      Icon={Moon}
       isToggled={widgetState.isDarkContrast}
       onToggle={toggleDarkContrastHandler}
       titleTranslationKey="colors.darkContrast"
