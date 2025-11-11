@@ -16,6 +16,132 @@ npm install @rihal/accessibility-ui
 
 ---
 
+## Language Integration with Host Applications
+
+The accessibility widget can integrate seamlessly with your application's i18n system (such as next-intl or i18next). This allows you to control the widget's language from your host application, preventing duplicate language selectors and ensuring a consistent language experience.
+
+### Setting Language from Host Application
+
+You can control the widget's language in three ways:
+
+#### 1. Direct Language Prop
+
+Pass the current language directly as a prop:
+
+```jsx
+import AccessibilityUI from "@rihal/accessibility-ui"
+
+export default function App() {
+  const currentLang = "ar" // or "en"
+
+  return (
+    <div className="App">
+      <MyApp />
+      <AccessibilityUI language={currentLang} disableLanguageSelector={true} />
+    </div>
+  )
+}
+```
+
+#### 2. Language Resolver Callback
+
+Provide a function that returns the current language:
+
+```jsx
+import AccessibilityUI from "@rihal/accessibility-ui"
+import { useLocale } from "next-intl"
+
+export default function App() {
+  const locale = useLocale()
+
+  return (
+    <div className="App">
+      <MyApp />
+      <AccessibilityUI resolveLanguage={() => locale} disableLanguageSelector={true} />
+    </div>
+  )
+}
+```
+
+#### 3. Auto-detection from Document
+
+If neither `language` nor `resolveLanguage` is provided, the widget will automatically detect the language from `document.documentElement.lang`:
+
+```jsx
+// In your HTML: <html lang="ar">
+import AccessibilityUI from "@rihal/accessibility-ui"
+
+export default function App() {
+  return (
+    <div className="App">
+      <MyApp />
+      <AccessibilityUI disableLanguageSelector={true} />
+    </div>
+  )
+}
+```
+
+### Language Props
+
+- **`language?: string`** - Set the widget language directly (e.g., "en" or "ar")
+- **`resolveLanguage?: () => string`** - Callback function that returns the current language
+- **`disableLanguageSelector?: boolean`** - When true, hides the language dropdown from the widget UI
+
+### Integration Examples
+
+#### With next-intl
+
+```tsx
+import AccessibilityUI from "@rihal/accessibility-ui"
+import { useLocale } from "next-intl"
+
+export default function RootLayout({ children }) {
+  const locale = useLocale()
+
+  return (
+    <html lang={locale}>
+      <body>
+        {children}
+        <AccessibilityUI language={locale} disableLanguageSelector={true} />
+      </body>
+    </html>
+  )
+}
+```
+
+#### With i18next
+
+```tsx
+import AccessibilityUI from "@rihal/accessibility-ui"
+import { useTranslation } from "react-i18next"
+
+export default function App() {
+  const { i18n } = useTranslation()
+
+  return (
+    <div className="App">
+      <MyApp />
+      <AccessibilityUI language={i18n.language} disableLanguageSelector={true} />
+    </div>
+  )
+}
+```
+
+### Supported Languages
+
+Currently, the widget supports:
+
+- English (`en`)
+- Arabic (`ar`)
+
+The widget automatically handles RTL (right-to-left) layout for Arabic.
+
+### Backward Compatibility
+
+All language integration props are optional. If you don't provide any language props, the widget will use its built-in language selector and behavior, maintaining full backward compatibility with existing implementations.
+
+---
+
 ## Theme Customization
 
 You can customize the theme of the accessibility widget to match your application's branding by passing a `theme` prop:

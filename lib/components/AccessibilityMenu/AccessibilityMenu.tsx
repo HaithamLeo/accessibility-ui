@@ -19,6 +19,7 @@ interface AccessibilityMenuProps {
   showWidget: boolean
   hasLanguages: boolean
   config?: WidgetConfig
+  hideLanguageSelector?: boolean
 }
 
 const AccessibilityMenu: FC<AccessibilityMenuProps> = ({
@@ -32,6 +33,7 @@ const AccessibilityMenu: FC<AccessibilityMenuProps> = ({
   showWidget,
   hasLanguages,
   config,
+  hideLanguageSelector,
 }) => {
   const { t } = useTranslation()
   const { language } = widgetState
@@ -47,14 +49,21 @@ const AccessibilityMenu: FC<AccessibilityMenuProps> = ({
     <div id={WIDGET_MENU_CONTAINER_ID} className={styled.a11yAccessibilityMenu}>
       <div style={{ display }} className={styled.a11yMenu}>
         <Header onShow={onShow} />
-        <Select
-          className={styled["a11y-lang-select-container"]}
-          options={hasLanguages ? langOptions : [langOptions[0]]}
-          value={langMap[language]}
-          onChange={(lang) => lang && onLangChange(lang.value)}
-          ref={selectRef}
+        {!hideLanguageSelector && (
+          <Select
+            className={styled["a11y-lang-select-container"]}
+            options={hasLanguages ? langOptions : [langOptions[0]]}
+            value={langMap[language]}
+            onChange={(lang) => lang && onLangChange(lang.value)}
+            ref={selectRef}
+          />
+        )}
+        <MenuContent
+          nodeListUpdated={nodeListUpdated}
+          widgetState={widgetState}
+          onChangeWidgetState={onChangeWidgetState}
+          config={config}
         />
-        <MenuContent nodeListUpdated={nodeListUpdated} widgetState={widgetState} onChangeWidgetState={onChangeWidgetState} config={config} />
         <div className={styled.resetButton}>
           <button onClick={onInit}>{t("resetSettings")}</button>
         </div>
