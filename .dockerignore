@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build outputs (we only want dist-demo, not lib dist)
+dist/
+
+# Development files
+.git/
+.github/
+.vscode/
+.DS_Store
+*.log
+
+# Documentation and configs not needed in container
+README.md
+.eslintrc.*
+.prettierrc
+postcss.config.js
+tsconfig*.json
+
+# Environment files
+.env*
+
+# Other
+*.md
+coverage/
