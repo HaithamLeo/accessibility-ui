@@ -2,7 +2,7 @@ import { FC, useLayoutEffect } from "react"
 import DYSLEXIA_FONT_STYLE from "components/buttons/content/DyslexiaFontButton/style"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import { Type } from "lucide-react"
+import { ALargeSmall } from "lucide-react"
 
 const styleID = "a11y-dyslexia-font-style"
 const rootClass = "a11y-dyslexia-font"
@@ -37,7 +37,7 @@ const DyslexiaFontButton: FC<DyslexiaFontButtonProps> = ({ widgetState, onChange
   }, [isDyslexiaFont])
   return (
     <WidgetButton
-      Icon={Type}
+      Icon={ALargeSmall}
       isToggled={isDyslexiaFont}
       onToggle={toogleDyslexiaFontHandler}
       titleTranslationKey="content.dyslexiaFont"

@@ -19,11 +19,9 @@
     "title": "اللون",
     "blueLightFilter": "مرشح الضوء الأزرق",
     "brightnessControl": "التحكم في السطوع",
-    "darkContrast": "تباين داكن",
+    "contrastMode": "وضع التباين",
     "highContrast": "تباين عالي",
-    "highSaturation": "تشبع عالي",
-    "lightContrast": "تباين فاتح",
-    "lowSaturation": "تشبع منخفض",
+    "saturation": "التشبع",
     "monochrom": "أحادي اللون",
     "textColorPicker": "منتقي لون النص",
     "visualImpairment": "ضعف البصر"

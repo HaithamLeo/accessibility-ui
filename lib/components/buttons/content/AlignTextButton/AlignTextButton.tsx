@@ -1,7 +1,7 @@
 import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import { AlignCenter } from "lucide-react"
+import { AlignCenter, AlignLeft, AlignRight } from "lucide-react"
 import { WIDGET_PORTAL_ID } from "lib/constants"
 
 const styleID = "a11y-align-text-style"
@@ -19,6 +19,19 @@ const AlignTextButton: FC<AlignTextButtonProps> = ({ direction, widgetState, onC
   const { textAlign } = widgetState
   const dir = textAlign[direction]
   const isToggled = !!dir
+
+  const getAlignIcon = () => {
+    switch (direction) {
+      case "left":
+        return AlignLeft
+      case "center":
+        return AlignCenter
+      case "right":
+        return AlignRight
+      default:
+        return AlignCenter
+    }
+  }
 
   const alignHandler = () => {
     onChangeWidgetState((d) => {
@@ -48,7 +61,7 @@ const AlignTextButton: FC<AlignTextButtonProps> = ({ direction, widgetState, onC
 
   return (
     <WidgetButton
-      Icon={AlignCenter}
+      Icon={getAlignIcon()}
       isToggled={isToggled}
       onToggle={alignHandler}
       titleTranslationKey={translationKey}

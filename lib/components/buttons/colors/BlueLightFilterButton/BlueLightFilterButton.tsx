@@ -1,5 +1,5 @@
 import { FC, useLayoutEffect } from "react"
-import { EyeOff } from "lucide-react"
+import { LightbulbOff } from "lucide-react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
 
@@ -44,7 +44,7 @@ const BlueLightFilterButton: FC<BlueLightFilterButtonProps> = ({ widgetState, on
 
   return (
     <WidgetButton
-      Icon={EyeOff}
+      Icon={LightbulbOff}
       isToggled={isBlueLightFilter}
       onToggle={toggleBluetLightFilter}
       titleTranslationKey="colors.blueLightFilter"

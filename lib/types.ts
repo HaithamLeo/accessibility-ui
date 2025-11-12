@@ -11,11 +11,9 @@ export interface WidgetState {
   language: string
   isBlueLightFilter: boolean
   brightness: { isBrightness: boolean; brightness: number }
-  isDarkContrast: boolean
-  isLightContrast: boolean
+  contrastMode: { isContrastMode: boolean; mode: "dark" | "light" | null }
   highContrast: { isHighContrast: boolean; contrast: number }
-  highSaturation: { isHighSaturation: boolean; saturation: number }
-  lowSaturation: { isLowSaturation: boolean; saturation: number }
+  saturation: { isSaturation: boolean; saturation: number }
   isMonochrome: boolean
   color: string
   isVisualImpairment: boolean
@@ -67,11 +65,9 @@ export interface WidgetConfig {
   // Color Panel Widgets
   blueLightFilter?: boolean
   brightness?: boolean
-  darkContrast?: boolean
-  lightContrast?: boolean
+  contrastMode?: boolean
   highContrast?: boolean
-  highSaturation?: boolean
-  lowSaturation?: boolean
+  saturation?: boolean
   monochrome?: boolean
   textColorPicker?: boolean
   visualImpairment?: boolean

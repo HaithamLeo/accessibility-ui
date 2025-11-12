@@ -19,11 +19,9 @@
     "title": "Color",
     "blueLightFilter": "Blue Light Filter",
     "brightnessControl": "Brightness Control",
-    "darkContrast": "Dark Contrast",
+    "contrastMode": "Contrast Mode",
     "highContrast": "High Contrast",
-    "highSaturation": "High Saturation",
-    "lightContrast": "Light Contrast",
-    "lowSaturation": "Low Saturation",
+    "saturation": "Saturation",
     "monochrom": "Monochrom",
     "textColorPicker": "Text Color Picker",
     "visualImpairment": "Visual Impairment"

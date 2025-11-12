@@ -3,7 +3,7 @@ import styled from "components/buttons/content/LineHeightButton/LineHeightButton
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import { WIDGET_PORTAL_ID } from "lib/constants"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import { AlignVerticalSpaceBetween } from "lucide-react"
+import { ListIndentIncrease } from "lucide-react"
 import ValueControlButton from "components/buttons/ValueControlButton/ValueControlButton"
 
 const styleID = "a11y-line-height-style"
@@ -69,7 +69,7 @@ const LineHeightButton: FC<LineHeightButtonProps> = ({ widgetState, onChangeWidg
 
   return (
     <WidgetButton
-      Icon={AlignVerticalSpaceBetween}
+      Icon={ListIndentIncrease}
       titleTranslationKey={"content.lineHeight"}
       title="Line Height"
       elementType={!isLineHeight ? "button" : "div"}

@@ -1,7 +1,7 @@
 import { FC, useLayoutEffect } from "react"
 import { WidgetState, ChangeWidgetStateHandler } from "lib/types"
 import WidgetButton from "components/buttons/WidgetButton/WidgetButton"
-import { Type } from "lucide-react"
+import { AArrowUp } from "lucide-react"
 import ValueControl from "components/buttons/ValueControl/ValueControl"
 
 const getNodesByDataAttrAndAdjustFontSize = (dataAttr: string, percentage: number) => {
@@ -79,7 +79,7 @@ const AdjustFontSize: FC<AdjustFontSizeProps> = ({ nodeListUpdated, widgetState,
 
   return (
     <WidgetButton
-      Icon={Type}
+      Icon={AArrowUp}
       titleTranslationKey={"content.adjustFontSize"}
       title="Adjust Font Size"
       elementType={!isFontSize ? "button" : "div"}
