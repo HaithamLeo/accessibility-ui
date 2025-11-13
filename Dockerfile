@@ -50,8 +50,6 @@ RUN echo 'server { \
     add_header Referrer-Policy "no-referrer-when-downgrade" always; \
 }' > /etc/nginx/conf.d/default.conf
 
-# Switch to nginx user for security
-USER nginx
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
