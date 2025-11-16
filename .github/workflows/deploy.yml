@@ -20,15 +20,17 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build image
-        run: docker build -t ghcr.io/rihal-om/accessibility-ui:${{ github.sha }} .
+        run: docker build -t ghcr.io/rihal-om/accessibility-ui:${{ github.sha }} -t ghcr.io/rihal-om/accessibility-ui:latest .
 
       - name: Push image
-        run: docker push ghcr.io/rihal-om/accessibility-ui:${{ github.sha }}
+        run: |
+          docker push ghcr.io/rihal-om/accessibility-ui:${{ github.sha }}
+          docker push ghcr.io/rihal-om/accessibility-ui:latest
 
       - name: Trigger Portainer webhook
         run: |
-          curl -f -X POST "${{ secrets.PORTAINER_WEBHOOK_URL }}"
+          curl -f -X POST "${{ secrets.PORTAINER_WEBHOOK_URL }}?tag=${{ github.sha }}"
