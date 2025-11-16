@@ -1,0 +1,34 @@
+name: Deploy to Portainer
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build image
+        run: docker build -t ghcr.io/rihal-om/accessibility-ui:${{ github.sha }} .
+
+      - name: Push image
+        run: docker push ghcr.io/rihal-om/accessibility-ui:${{ github.sha }}
+
+      - name: Trigger Portainer webhook
+        run: |
+          curl -f -X POST "${{ secrets.PORTAINER_WEBHOOK_URL }}"
