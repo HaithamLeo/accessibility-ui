@@ -36,7 +36,14 @@ const AlignTextButton: FC<AlignTextButtonProps> = ({ direction, widgetState, onC
   const alignHandler = () => {
     onChangeWidgetState((d) => {
       const prevDirection = d.textAlign[direction]
-      d.textAlign[direction] = !prevDirection ? direction : null
+      // Reset all alignments
+      d.textAlign.left = null
+      d.textAlign.center = null
+      d.textAlign.right = null
+      // Set the selected alignment if it wasn't already active
+      if (!prevDirection) {
+        d.textAlign[direction] = direction
+      }
     })
   }
 
