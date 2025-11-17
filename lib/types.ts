@@ -30,6 +30,7 @@ export interface WidgetState {
   zoom: { isZoom: boolean; zoom: number }
   isBigCursor: boolean
   showReadingGuide: boolean
+  isHideImages: boolean
 }
 
 export type IconSvgComponent =
@@ -75,4 +76,5 @@ export interface WidgetConfig {
   // Tools Panel Widgets
   bigCursor?: boolean
   readingGuide?: boolean
+  hideImages?: boolean
 }

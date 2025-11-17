@@ -38,5 +38,6 @@ export const getInitialWidgetState = (): WidgetState => {
     zoom: { isZoom: false, zoom: 1 },
     isBigCursor: false,
     showReadingGuide: false,
+    isHideImages: false,
   }
 }

@@ -29,7 +29,8 @@
   "tools": {
     "title": "الأدوات",
     "bigCursor": "مؤشر كبير",
-    "readingGuide": "دليل القراءة"
+    "readingGuide": "دليل القراءة",
+    "hideImages": "إخفاء الصور"
   },
   "resetSettings": "إعادة تعيين الإعدادات"
 }

@@ -29,7 +29,8 @@
   "tools": {
     "title": "Tools",
     "bigCursor": "Big Cursor",
-    "readingGuide": "Reading Guide"
+    "readingGuide": "Reading Guide",
+    "hideImages": "Hide Images"
   },
   "resetSettings": "Reset Settings"
 }
