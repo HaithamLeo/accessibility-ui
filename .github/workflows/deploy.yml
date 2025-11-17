@@ -33,4 +33,4 @@ jobs:
 
       - name: Trigger Portainer webhook
         run: |
-          curl -f -X POST "${{ secrets.PORTAINER_WEBHOOK_URL }}?tag=${{ github.sha }}"
+          curl -f -X POST "${{ secrets.PORTAINER_WEBHOOK_URL }}"
