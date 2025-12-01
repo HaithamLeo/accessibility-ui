@@ -1,8 +1,8 @@
 {
-  "name": "accessibility-ui",
+  "name": "react-a11y-kit",
   "author": "Riham AL Khamiasi",
   "license": "MIT",
-  "description": "A comprehensive React accessibility widget that integrates seamlessly with React apps to enhance usability for all users. accessibility-ui provides adjustable font sizes, alignment, dyslexia-friendly fonts, color and contrast controls, blue light filtering, brightness adjustment, zoom functionality, and more. Designed to help developers meet WCAG standards and create universally accessible web applications, accessibility-ui empowers every visitor to customize their browsing experience for maximum comfort and inclusion.",
+  "description": "A comprehensive React accessibility widget that integrates seamlessly with React apps to enhance usability for all users. react-a11y-kit provides adjustable font sizes, alignment, dyslexia-friendly fonts, color and contrast controls, blue light filtering, brightness adjustment, zoom functionality, and more. Designed to help developers meet WCAG standards and create universally accessible web applications, react-a11y-kit empowers every visitor to customize their browsing experience for maximum comfort and inclusion.",
   "keywords": [
     "accessibility",
     "web-accessibility",
@@ -53,7 +53,7 @@
     "Web accessibility standards",
     "Universal web access solutions"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "main": "./dist/main.cjs",
   "module": "./dist/main.js",
