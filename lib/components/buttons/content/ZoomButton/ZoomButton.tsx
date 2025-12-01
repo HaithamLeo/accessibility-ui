@@ -19,8 +19,11 @@ const ZoomButton: FC<ZoomButtonProps> = ({ widgetState, onChangeWidgetState }) =
 
   const increaseZoomHandler = () => {
     onChangeWidgetState((draft) => {
-      draft.zoom.isZoom = true
-      draft.zoom.zoom += 0.1
+      // Prevent exceeding 1.5 by validating next increment
+      if (draft.zoom.zoom + 0.1 <= 1.5) {
+        draft.zoom.isZoom = true
+        draft.zoom.zoom += 0.1
+      }
     })
   }
   const decreaseZoomHandler = () => {
