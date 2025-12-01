@@ -1,6 +1,6 @@
-# accessibility-ui: React Accessibility Widget
+# react-a11y-kit: React Accessibility Widget
 
-**accessibility-ui** is a React component that brings an advanced accessibility interface to your web app, empowering users with a suite of usability tools.
+**react-a11y-kit** is a React component that brings an advanced accessibility interface to your web app, empowering users with a suite of usability tools.
 
 ---
 
@@ -9,9 +9,9 @@
 Install via your preferred package manager:
 
 ```bash
-yarn add accessibility-ui
+yarn add react-a11y-kit
 # or
-npm install accessibility-ui
+npm install react-a11y-kit
 ```
 
 ---
@@ -29,7 +29,7 @@ You can control the widget's language in three ways:
 Pass the current language directly as a prop:
 
 ```jsx
-import AccessibilityUI from "accessibility-ui"
+import AccessibilityUI from "react-a11y-kit"
 
 export default function App() {
   const currentLang = "ar" // or "en"
@@ -48,7 +48,7 @@ export default function App() {
 Provide a function that returns the current language:
 
 ```jsx
-import AccessibilityUI from "accessibility-ui"
+import AccessibilityUI from "react-a11y-kit"
 import { useLocale } from "next-intl"
 
 export default function App() {
@@ -69,7 +69,7 @@ If neither `language` nor `resolveLanguage` is provided, the widget will automat
 
 ```jsx
 // In your HTML: <html lang="ar">
-import AccessibilityUI from "accessibility-ui"
+import AccessibilityUI from "react-a11y-kit"
 
 export default function App() {
   return (
@@ -92,7 +92,7 @@ export default function App() {
 #### With next-intl
 
 ```tsx
-import AccessibilityUI from "accessibility-ui"
+import AccessibilityUI from "react-a11y-kit"
 import { useLocale } from "next-intl"
 
 export default function RootLayout({ children }) {
@@ -178,7 +178,7 @@ All theme properties are optional. If not provided, the default theme will be us
 ### TypeScript Support for Themes
 
 ```tsx
-import AccessibilityUI, { AccessibilityTheme } from "accessibility-ui"
+import AccessibilityUI, { AccessibilityTheme } from "react-a11y-kit"
 
 const customTheme: AccessibilityTheme = {
   primaryColor: "#2563eb",
@@ -204,7 +204,7 @@ export default function App() {
 ### Basic Usage (All Widgets Enabled)
 
 ```jsx
-import AccessibilityUI from "accessibility-ui"
+import AccessibilityUI from "react-a11y-kit"
 
 export default function App() {
   return (
@@ -270,7 +270,7 @@ export default function App() {
 The library includes TypeScript definitions. You can import the `WidgetConfig` type for better type safety:
 
 ```tsx
-import AccessibilityUI, { WidgetConfig } from "accessibility-ui"
+import AccessibilityUI, { WidgetConfig } from "react-a11y-kit"
 
 const config: WidgetConfig = {
   adjustFontSize: true,
@@ -516,7 +516,7 @@ All widgets are enabled by default. You can selectively disable widgets by passi
 You can customize both the theme and which widgets to display:
 
 ```jsx
-import AccessibilityUI from "accessibility-ui"
+import AccessibilityUI from "react-a11y-kit"
 
 export default function App() {
   return (
@@ -553,15 +553,15 @@ export default function App() {
 Install and add to your React project:
 
 ```bash
-yarn add accessibility-ui
+yarn add react-a11y-kit
 # or
-npm install accessibility-ui
+npm install react-a11y-kit
 ```
 
 ### All Widgets Enabled (Default)
 
 ```jsx
-import AccessibilityUI from "accessibility-ui"
+import AccessibilityUI from "react-a11y-kit"
 
 export default function App() {
   return (
@@ -576,7 +576,7 @@ export default function App() {
 ### Custom Widget Configuration
 
 ```jsx
-import AccessibilityUI from "accessibility-ui"
+import AccessibilityUI from "react-a11y-kit"
 
 export default function App() {
   return (
@@ -602,4 +602,4 @@ export default function App() {
 
 ---
 
-Empower everyone to navigate your site comfortably with accessibility-ui—no setup required.
+Empower everyone to navigate your site comfortably with react-a11y-kit no setup required.
