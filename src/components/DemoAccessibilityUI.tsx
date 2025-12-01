@@ -58,7 +58,7 @@ export default function DemoAccessibilityUI() {
         <p>
           This is an example paragraph. Try adjusting the font, color, or spacing using the widget. You can also{" "}
           <a
-            href="https://github.com/rihal-om/accessibility-ui"
+            href="https://github.com/HaithamLeo/accessibility-ui"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: "#1976d2", fontWeight: "bold" }}

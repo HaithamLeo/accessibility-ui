@@ -1,5 +1,5 @@
 {
-  "name": "@rihal/accessibility-ui",
+  "name": "accessibility-ui",
   "author": "Riham AL Khamiasi",
   "license": "MIT",
   "description": "A comprehensive React accessibility widget that integrates seamlessly with React apps to enhance usability for all users. accessibility-ui provides adjustable font sizes, alignment, dyslexia-friendly fonts, color and contrast controls, blue light filtering, brightness adjustment, zoom functionality, and more. Designed to help developers meet WCAG standards and create universally accessible web applications, accessibility-ui empowers every visitor to customize their browsing experience for maximum comfort and inclusion.",
@@ -70,10 +70,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rihal-om/accessibility-ui.git"
+    "url": "git+https://github.com/HaithamLeo/accessibility-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/rihal-om/accessibility-ui/issues"
+    "url": "https://github.com/HaithamLeo/accessibility-ui/issues"
   },
   "publishConfig": {
     "access": "restricted"

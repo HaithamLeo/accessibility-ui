@@ -15,6 +15,7 @@ import { getInitialWidgetState } from "lib/utils"
 import { initReactI18next } from "react-i18next"
 import { Resources, getLanguagePromises, languageArray, languages, rtlLanguages } from "i18/locale"
 import en from "i18/locale/english.json"
+import ar from "i18/locale/arabic.json"
 
 // Initialize i18next immediately with default resources
 i18n
@@ -25,6 +26,9 @@ i18n
     resources: {
       en: {
         translation: en,
+      },
+      ar: {
+        translation: ar,
       },
     },
     interpolation: {
@@ -91,6 +95,8 @@ const AccessibilityUI: FC<AccessibilityUIProps> = ({
 
   const changeLanguageHandler = (langCode: string) => {
     i18n.changeLanguage(langCode, () => {
+      // Reflect language on document for consistency
+      document.documentElement.lang = langCode
       setWidgetState((p) => {
         return produce(p, (draft) => {
           draft.language = langCode
@@ -158,6 +164,7 @@ const AccessibilityUI: FC<AccessibilityUIProps> = ({
     <Portal wrapperElementId={WIDGET_PORTAL_ID}>
       <div
         id={WIDGET_APP_ID}
+        dir={direction}
         style={{ direction, fontSize: 50, ...themeStyles } as React.CSSProperties}
         data-a11y-language={effectiveLanguage}
       >

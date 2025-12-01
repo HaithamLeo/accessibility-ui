@@ -1,5 +1,5 @@
 import React from "react"
-import { Accessibility as LucideAccessibility } from "lucide-react"
+import { PersonStanding } from "lucide-react"
 import IconBase, { IconBaseProps } from "components/Icons/IconBase"
 import styles from "components/Icons/accessibility.module.scss"
 
@@ -32,7 +32,7 @@ const Accessibility: React.FC<AccessibilityIconProps> = ({
         }}
         aria-label="Open Accessibility Settings"
       >
-        <LucideAccessibility
+        <PersonStanding
           className={styles.floatingIcon}
           stroke="currentColor"
           fill="none"
@@ -47,7 +47,7 @@ const Accessibility: React.FC<AccessibilityIconProps> = ({
 
   return (
     <IconBase size={size} color={color} className={className} style={style}>
-      <LucideAccessibility stroke="currentColor" fill="none" strokeWidth="2" height="100%" width="100%" />
+      <PersonStanding stroke="currentColor" fill="none" strokeWidth="2" height="100%" width="100%" />
     </IconBase>
   )
 }

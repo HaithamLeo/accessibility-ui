@@ -1,11 +1,7 @@
 import { Draft } from "immer"
 export type ChangeWidgetStateHandler = (d: Draft<WidgetState>) => void
 
-interface TextAlign {
-  left: string | null
-  center: string | null
-  right: string | null
-}
+type TextAlign = "left" | "center" | "right" | null
 
 export interface WidgetState {
   language: string

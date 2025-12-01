@@ -1,6 +1,6 @@
-# ♿ @rihal/accessibility-ui: React Accessibility Widget
+# accessibility-ui: React Accessibility Widget
 
-**@rihal/accessibility-ui** is a React component that brings an advanced accessibility interface to your web app, empowering users with a suite of usability tools.
+**accessibility-ui** is a React component that brings an advanced accessibility interface to your web app, empowering users with a suite of usability tools.
 
 ---
 
@@ -9,9 +9,9 @@
 Install via your preferred package manager:
 
 ```bash
-yarn add @rihal/accessibility-ui
+yarn add accessibility-ui
 # or
-npm install @rihal/accessibility-ui
+npm install accessibility-ui
 ```
 
 ---
@@ -29,7 +29,7 @@ You can control the widget's language in three ways:
 Pass the current language directly as a prop:
 
 ```jsx
-import AccessibilityUI from "@rihal/accessibility-ui"
+import AccessibilityUI from "accessibility-ui"
 
 export default function App() {
   const currentLang = "ar" // or "en"
@@ -48,7 +48,7 @@ export default function App() {
 Provide a function that returns the current language:
 
 ```jsx
-import AccessibilityUI from "@rihal/accessibility-ui"
+import AccessibilityUI from "accessibility-ui"
 import { useLocale } from "next-intl"
 
 export default function App() {
@@ -69,7 +69,7 @@ If neither `language` nor `resolveLanguage` is provided, the widget will automat
 
 ```jsx
 // In your HTML: <html lang="ar">
-import AccessibilityUI from "@rihal/accessibility-ui"
+import AccessibilityUI from "accessibility-ui"
 
 export default function App() {
   return (
@@ -92,7 +92,7 @@ export default function App() {
 #### With next-intl
 
 ```tsx
-import AccessibilityUI from "@rihal/accessibility-ui"
+import AccessibilityUI from "accessibility-ui"
 import { useLocale } from "next-intl"
 
 export default function RootLayout({ children }) {
@@ -112,7 +112,7 @@ export default function RootLayout({ children }) {
 #### With i18next
 
 ```tsx
-import AccessibilityUI from "@rihal/accessibility-ui"
+import AccessibilityUI from "accessibility-ui"
 import { useTranslation } from "react-i18next"
 
 export default function App() {
@@ -147,7 +147,7 @@ All language integration props are optional. If you don't provide any language p
 You can customize the theme of the accessibility widget to match your application's branding by passing a `theme` prop:
 
 ```jsx
-import AccessibilityUI from "@rihal/accessibility-ui"
+import AccessibilityUI from "accessibility-ui"
 
 export default function App() {
   return (
@@ -178,7 +178,7 @@ All theme properties are optional. If not provided, the default theme will be us
 ### TypeScript Support for Themes
 
 ```tsx
-import AccessibilityUI, { AccessibilityTheme } from "@rihal/accessibility-ui"
+import AccessibilityUI, { AccessibilityTheme } from "accessibility-ui"
 
 const customTheme: AccessibilityTheme = {
   primaryColor: "#2563eb",
@@ -204,7 +204,7 @@ export default function App() {
 ### Basic Usage (All Widgets Enabled)
 
 ```jsx
-import AccessibilityUI from "@rihal/accessibility-ui"
+import AccessibilityUI from "accessibility-ui"
 
 export default function App() {
   return (
@@ -221,7 +221,7 @@ export default function App() {
 You can selectively enable or disable specific accessibility widgets by passing a `config` prop. By default, all widgets are enabled. Set any widget to `false` to hide it.
 
 ```jsx
-import AccessibilityUI from "@rihal/accessibility-ui"
+import AccessibilityUI from "accessibility-ui"
 
 export default function App() {
   return (
@@ -270,7 +270,7 @@ export default function App() {
 The library includes TypeScript definitions. You can import the `WidgetConfig` type for better type safety:
 
 ```tsx
-import AccessibilityUI, { WidgetConfig } from "@rihal/accessibility-ui"
+import AccessibilityUI, { WidgetConfig } from "accessibility-ui"
 
 const config: WidgetConfig = {
   adjustFontSize: true,
@@ -516,7 +516,7 @@ All widgets are enabled by default. You can selectively disable widgets by passi
 You can customize both the theme and which widgets to display:
 
 ```jsx
-import AccessibilityUI from "@rihal/accessibility-ui"
+import AccessibilityUI from "accessibility-ui"
 
 export default function App() {
   return (
@@ -553,15 +553,15 @@ export default function App() {
 Install and add to your React project:
 
 ```bash
-yarn add @rihal/accessibility-ui
+yarn add accessibility-ui
 # or
-npm install @rihal/accessibility-ui
+npm install accessibility-ui
 ```
 
 ### All Widgets Enabled (Default)
 
 ```jsx
-import AccessibilityUI from "@rihal/accessibility-ui"
+import AccessibilityUI from "accessibility-ui"
 
 export default function App() {
   return (
@@ -576,7 +576,7 @@ export default function App() {
 ### Custom Widget Configuration
 
 ```jsx
-import AccessibilityUI from "@rihal/accessibility-ui"
+import AccessibilityUI from "accessibility-ui"
 
 export default function App() {
   return (
@@ -602,4 +602,4 @@ export default function App() {
 
 ---
 
-Empower everyone to navigate your site comfortably with @rihal/accessibility-ui—no setup required.
+Empower everyone to navigate your site comfortably with accessibility-ui—no setup required.
