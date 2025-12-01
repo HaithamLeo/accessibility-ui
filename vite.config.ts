@@ -37,14 +37,14 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "lib/main.ts"),
-      formats: ["es"],
+      formats: ["es", "cjs"],
+      fileName: (format) => `main.${format === "es" ? "js" : "cjs"}`,
     },
     copyPublicDir: false,
     rollupOptions: {
       external: ["react", "react-dom"],
       output: {
         assetFileNames: "assets/[name][extname]",
-        entryFileNames: "[name].js",
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
