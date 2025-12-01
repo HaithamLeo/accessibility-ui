@@ -27,7 +27,7 @@ export const getInitialWidgetState = (): WidgetState => {
     isVisualImpairment: false,
     isFontSize: false,
     adjustFontSizePercentage: 100,
-    textAlign: { left: null, center: null, right: null },
+    textAlign: null,
     isDyslexiaFont: false,
     isFontWeightBold: false,
     highlightLinks: false,
