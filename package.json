@@ -55,16 +55,20 @@
   ],
   "version": "1.0.0",
   "type": "module",
-  "main": "./dist/main.js",
+  "main": "./dist/main.cjs",
   "module": "./dist/main.js",
   "types": "./dist/main.d.ts",
   "exports": {
     ".": {
       "types": "./dist/main.d.ts",
-      "import": "./dist/main.js"
+      "import": "./dist/main.js",
+      "require": "./dist/main.cjs"
     },
     "./dist/assets/main.css": "./dist/assets/main.css"
   },
+  "sideEffects": [
+    "**/*.css"
+  ],
   "files": [
     "dist"
   ],
@@ -76,7 +80,7 @@
     "url": "https://github.com/HaithamLeo/accessibility-ui/issues"
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   },
   "scripts": {
     "dev": "vite",
@@ -85,7 +89,9 @@
     "preview": "vite preview",
     "preview:demo": "vite preview --config vite.demo.config.ts",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "prepublishOnly": "npm run build"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
+    "release": "npm run build && npm publish --access public"
   },
   "peerDependencies": {
     "react": "^18.2.0",
