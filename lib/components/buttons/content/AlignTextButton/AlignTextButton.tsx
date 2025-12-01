@@ -17,8 +17,8 @@ interface AlignTextButtonProps {
 
 const AlignTextButton: FC<AlignTextButtonProps> = ({ direction, widgetState, onChangeWidgetState, translationKey }) => {
   const { textAlign } = widgetState
-  const dir = textAlign[direction]
-  const isToggled = !!dir
+  const dir = textAlign
+  const isToggled = textAlign === direction
 
   const getAlignIcon = () => {
     switch (direction) {
@@ -35,8 +35,7 @@ const AlignTextButton: FC<AlignTextButtonProps> = ({ direction, widgetState, onC
 
   const alignHandler = () => {
     onChangeWidgetState((d) => {
-      const prevDirection = d.textAlign[direction]
-      d.textAlign[direction] = !prevDirection ? direction : null
+      d.textAlign = d.textAlign === direction ? null : direction
     })
   }
 
