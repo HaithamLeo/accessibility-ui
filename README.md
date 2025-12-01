@@ -1,4 +1,4 @@
-# ♿ @rihal/accessibility-ui: React Accessibility Widget
+# @rihal/accessibility-ui: React Accessibility Widget
 
 **@rihal/accessibility-ui** is a React component that brings an advanced accessibility interface to your web app, empowering users with a suite of usability tools.
 
