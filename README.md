@@ -602,4 +602,4 @@ export default function App() {
 
 ---
 
-Empower everyone to navigate your site comfortably with react-a11y-kit no setup required.
+Empower everyone to navigate your site comfortably with react-a11y-kit—no setup required.
