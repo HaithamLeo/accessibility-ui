@@ -37,7 +37,7 @@ const BrightnessControl: FC<BrightnessControlProps> = ({ widgetState, onChangeWi
     onChangeWidgetState((draft) => {
       const isActive = !draft.brightness.isBrightness
       draft.brightness.isBrightness = isActive
-      draft.brightness.brightness = isActive ? 150 : 0
+      draft.brightness.brightness = isActive ? 100 : 0
     })
   }
 
@@ -92,7 +92,7 @@ const BrightnessControl: FC<BrightnessControlProps> = ({ widgetState, onChangeWi
       {isBrightness && (
         <RcSlider
           range
-          min={150}
+          min={100}
           max={500}
           value={brightness}
           onChange={(e) => {
