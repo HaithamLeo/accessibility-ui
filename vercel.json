@@ -1,0 +1,4 @@
+{
+  "buildCommand": "vite build --config vite.demo.config.ts",
+  "outputDirectory": "dist"
+}
