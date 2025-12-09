@@ -60,9 +60,9 @@ const LineHeightButton: FC<LineHeightButtonProps> = ({ widgetState, onChangeWidg
     if (!isLineHeight) return null
     return (
       <div className={styled.accLineHeightButton}>
-        {isLineHeight && <ValueControlButton onClick={increaseLineHeightHandler} controlType="increase" />}
-        <ValueControlButton onClick={lineHeighToggleHandler} controlType="init" />
         {isLineHeight && <ValueControlButton onClick={decreaseLineHeightHandler} controlType="decrease" />}
+        <ValueControlButton onClick={lineHeighToggleHandler} controlType="init" />
+        {isLineHeight && <ValueControlButton onClick={increaseLineHeightHandler} controlType="increase" />}
       </div>
     )
   }
