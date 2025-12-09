@@ -19,12 +19,16 @@ const LineHeightButton: FC<LineHeightButtonProps> = ({ widgetState, onChangeWidg
 
   const increaseLineHeightHandler = () => {
     onChangeWidgetState((draft) => {
-      draft.lineHeight.lineHeight += 0.1
+      // Cap line-height at a reasonable maximum (3.0)
+      if (draft.lineHeight.lineHeight < 3.0) {
+        draft.lineHeight.lineHeight += 0.1
+      }
     })
   }
   const decreaseLineHeightHandler = () => {
     onChangeWidgetState((draft) => {
-      if (draft.lineHeight.lineHeight > 0.1) {
+      // Prevent going below a sensible minimum (1.0)
+      if (draft.lineHeight.lineHeight > 1.0) {
         draft.lineHeight.lineHeight -= 0.1
       }
     })
@@ -33,7 +37,8 @@ const LineHeightButton: FC<LineHeightButtonProps> = ({ widgetState, onChangeWidg
     onChangeWidgetState((draft) => {
       const isActive = !draft.lineHeight.isLineHeight
       draft.lineHeight.isLineHeight = isActive
-      draft.lineHeight.lineHeight = isActive ? 3 : 0
+      // Initialize to 1.5 when enabling; reset to 0 when disabling
+      draft.lineHeight.lineHeight = isActive ? 1.5 : 0
     })
   }
 
