@@ -69,11 +69,9 @@ const BrightnessControl: FC<BrightnessControlProps> = ({ widgetState, onChangeWi
     if (!isBrightness) return null
     return (
       <div className={styled.accBrightnessControl}>
-        <ValueControlButton onClick={increaseBrightnessHandler} controlType="increase" />
-
-        <ValueControlButton onClick={toggleBrightnessHandler} controlType="init" />
-
         <ValueControlButton onClick={decreaseBrightnessHandler} controlType="decrease" />
+        <ValueControlButton onClick={toggleBrightnessHandler} controlType="init" />
+        <ValueControlButton onClick={increaseBrightnessHandler} controlType="increase" />
       </div>
     )
   }

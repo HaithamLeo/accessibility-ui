@@ -1,10 +1,10 @@
 const sampleText = `
-Welcome to the accessibility-ui demo page!
+Welcome to the react-a11y-kit demo page!
 
 This page allows you to interact with all the accessibility features before installing the package. 
 Try out font adjustments, color modes, language switching, reading guides, and more.
 
-Headings, paragraphs, links, and images below will respond to accessibility-ui controls.
+Headings, paragraphs, links, and images below will respond to react-a11y-kit controls.
 
 Features to try:
 - Change text size, line height, spacing, and alignment
@@ -34,7 +34,7 @@ export default function DemoAccessibilityUI() {
           boxShadow: "0 2px 10px rgba(126,87,194,0.08)",
         }}
       >
-        <h1 style={{ color: "#4A148C", fontSize: "2.8rem", margin: 0 }}>accessibility-ui Demo Page</h1>
+        <h1 style={{ color: "#4A148C", fontSize: "2.8rem", margin: 0 }}>react-a11y-kit Demo Page</h1>
         <p style={{ color: "#333", fontSize: "1.1rem", marginTop: "1rem" }}>
           Experience all accessibility features live!
         </p>
@@ -97,7 +97,7 @@ export default function DemoAccessibilityUI() {
           marginTop: "2rem",
         }}
       >
-        <strong>Tested with accessibility-ui v1.x</strong>
+        <strong>Tested with react-a11y-kit v1.0.2</strong>
         <br />
         <span>Created for demonstration purposes. Try all features before installing in your own app!</span>
       </footer>

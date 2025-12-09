@@ -73,9 +73,9 @@ const ZoomButton: FC<ZoomButtonProps> = ({ widgetState, onChangeWidgetState }) =
     if (!isZoom) return null
     return (
       <div className={styled.accZoomButton}>
-        <ValueControlButton onClick={increaseZoomHandler} controlType="increase" />
-        <ValueControlButton onClick={zoomInitHandler} controlType="init" />
         <ValueControlButton onClick={decreaseZoomHandler} controlType="decrease" />
+        <ValueControlButton onClick={zoomInitHandler} controlType="init" />
+        <ValueControlButton onClick={increaseZoomHandler} controlType="increase" />
       </div>
     )
   }

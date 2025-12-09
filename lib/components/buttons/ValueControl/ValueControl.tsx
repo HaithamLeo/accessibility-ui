@@ -10,9 +10,9 @@ interface ValueControlProps {
 const ValueControl: FC<ValueControlProps> = ({ onIncrease, onToggle, onDescrease }) => {
   return (
     <div className={styles.valueControl}>
-      <ValueControlButton onClick={onIncrease} controlType="increase" />
-      <ValueControlButton onClick={onToggle} controlType="init" />
       <ValueControlButton onClick={onDescrease} controlType="decrease" />
+      <ValueControlButton onClick={onToggle} controlType="init" />
+      <ValueControlButton onClick={onIncrease} controlType="increase" />
     </div>
   )
 }
