@@ -42,7 +42,9 @@ export default defineConfig({
     },
     copyPublicDir: false,
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: (id) => {
+        return id === "react" || id === "react-dom" || id.startsWith("react/") || id.startsWith("react-dom/")
+      },
       output: {
         assetFileNames: "assets/[name][extname]",
         globals: {
