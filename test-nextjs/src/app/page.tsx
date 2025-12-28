@@ -1,6 +1,10 @@
 "use client"
 
-import AccessibilityUI from "react-a11y-kit"
+import dynamic from "next/dynamic"
+
+const AccessibilityUI = dynamic(() => import("react-a11y-kit/client"), {
+  ssr: false,
+})
 
 const sampleText = `
 Welcome to the react-a11y-kit demo page!
