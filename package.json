@@ -53,7 +53,7 @@
     "Web accessibility standards",
     "Universal web access solutions"
   ],
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "main": "./dist/main.cjs",
   "module": "./dist/main.js",
