@@ -64,6 +64,11 @@
       "import": "./dist/main.js",
       "require": "./dist/main.cjs"
     },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "import": "./dist/client.js",
+      "require": "./dist/client.cjs"
+    },
     "./dist/assets/main.css": "./dist/assets/main.css"
   },
   "sideEffects": [

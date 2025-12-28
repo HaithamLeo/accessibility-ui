@@ -6,11 +6,27 @@ import { libInjectCss } from "vite-plugin-lib-inject-css"
 import svgr from "vite-plugin-svgr"
 import { terser } from "rollup-plugin-terser"
 
+// Plugin to add "use client" directive to client entry point only
+const addUseClientToClientEntry = () => ({
+  name: "add-use-client-to-client",
+  enforce: "post" as const,
+  generateBundle(_options: any, bundle: any) {
+    // Only add "use client" to client.js and client.cjs entry chunks
+    for (const fileName in bundle) {
+      if (fileName === "client.js" || fileName === "client.cjs") {
+        const file = bundle[fileName]
+        if (file.type === "chunk" && file.isEntry) {
+          file.code = `"use client";\n${file.code}`
+        }
+      }
+    }
+  },
+})
+
 export default defineConfig({
   plugins: [
     react(),
     svgr(),
-    libInjectCss(),
     dts({ include: ["lib"], copyDtsFiles: true }),
     terser({
       format: {
@@ -20,10 +36,12 @@ export default defineConfig({
       compress: {
         passes: 2, // More passes over the code for compression
         drop_console: true, // Remove console statements
-        sequences: true, // Join consecutive simple statements using the “comma operator”
+        sequences: true, // Join consecutive simple statements using the "comma operator"
       },
       mangle: true, // Shorten variable names
     }),
+    libInjectCss(),
+    addUseClientToClientEntry(),
   ],
   resolve: {
     alias: {
@@ -36,9 +54,12 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, "lib/main.ts"),
+      entry: {
+        main: resolve(__dirname, "lib/main.ts"),
+        client: resolve(__dirname, "lib/client.tsx"),
+      },
       formats: ["es", "cjs"],
-      fileName: (format) => `main.${format === "es" ? "js" : "cjs"}`,
+      fileName: (format, entryName) => `${entryName}.${format === "es" ? "js" : "cjs"}`,
     },
     copyPublicDir: false,
     rollupOptions: {

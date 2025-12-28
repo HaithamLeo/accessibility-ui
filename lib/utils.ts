@@ -15,8 +15,11 @@ export const getComputedStyleAndSetWidgetDataFontSize = (elem: HTMLElement) => {
 export const getDataImageSvgBase64 = (svg: string) => `data:image/svg+xml;base64,${window.btoa(svg)}`
 
 export const getInitialWidgetState = (): WidgetState => {
+  // Check if we're running in a browser environment (client-side)
+  const isClient = typeof window !== "undefined" && typeof window.localStorage !== "undefined"
+
   return {
-    language: localStorage.getItem("i18nextLng") ?? i18n.language,
+    language: isClient ? window.localStorage.getItem("i18nextLng") ?? i18n.language : i18n.language,
     isBlueLightFilter: false,
     brightness: { isBrightness: false, brightness: 150 },
     contrastMode: { isContrastMode: false, mode: null },
