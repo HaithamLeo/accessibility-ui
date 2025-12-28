@@ -19,7 +19,7 @@ export const getInitialWidgetState = (): WidgetState => {
   const isClient = typeof window !== "undefined" && typeof window.localStorage !== "undefined"
 
   return {
-    language: isClient ? localStorage.getItem("i18nextLng") ?? i18n.language : i18n.language,
+    language: isClient ? window.localStorage.getItem("i18nextLng") ?? i18n.language : i18n.language,
     isBlueLightFilter: false,
     brightness: { isBrightness: false, brightness: 150 },
     contrastMode: { isContrastMode: false, mode: null },

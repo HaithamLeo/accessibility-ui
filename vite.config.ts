@@ -11,11 +11,11 @@ const addUseClientToClientEntry = () => ({
   name: "add-use-client-to-client",
   enforce: "post" as const,
   generateBundle(_options: any, bundle: any) {
-    // Only add "use client" to client.js and client.cjs files
+    // Only add "use client" to client.js and client.cjs entry chunks
     for (const fileName in bundle) {
       if (fileName === "client.js" || fileName === "client.cjs") {
         const file = bundle[fileName]
-        if (file.type === "chunk") {
+        if (file.type === "chunk" && file.isEntry) {
           file.code = `"use client";\n${file.code}`
         }
       }
