@@ -1,5 +1,8 @@
 # react-a11y-kit: React Accessibility Widget
 
+[![Monthly Downloads](https://img.shields.io/npm/dm/react-a11y-kit)](https://www.npmjs.com/package/react-a11y-kit)
+[![Total Downloads](https://img.shields.io/npm/dt/react-a11y-kit)](https://www.npmjs.com/package/react-a11y-kit)
+
 **react-a11y-kit** is a React component that brings an advanced accessibility interface to your web app, empowering users with a suite of usability tools.
 
 <img width="1337" height="990" alt="image" src="https://github.com/user-attachments/assets/4ca208b1-af6e-4c03-98f4-e04156c381b1" />
